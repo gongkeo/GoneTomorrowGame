@@ -1,5 +1,5 @@
 # 게임 스크립트
-default preferences.text_cps = 40
+default preferences.text_cps = 30
 
 # 이미지 정의
 image black = "bg_black.png"
@@ -82,7 +82,7 @@ label start:
     #총성+검은바탕
     play sound "audio/Handling.mp3"
     play sound "audio/Gunfire.mp3"
-    pause(5.0)
+    pause(3.0)
     stop sound
 
     #인트로 화면? 있으면 좋겠지만... 생략 가능
