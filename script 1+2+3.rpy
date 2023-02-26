@@ -54,7 +54,7 @@ label start:
 
     "단 한 발이면 모든 게 끝난다."
     "…모든 게 끝난다."
-    "정훈은 {color=highlight}방아쇠{/color}에 검지를 올렸다."
+    "정훈은 {color=#FF8C00}방아쇠{/color}에 검지를 올렸다."
     "옥균은 그제야 활자에서 눈을 떼어 고개를 들었다."
     "죽음 같은 정적이 흐른다."
     
@@ -62,7 +62,7 @@ label start:
     jh "……."
     kog "…곰곰이 생각해보았네."
     jh "……."
-    kog "자네와 내가 {color=highlight}이룩할 수 있는 세상{/color}은 어떤 모습일까."
+    kog "자네와 내가 {color=#FF8C00}이룩할 수 있는 세상{/color}은 어떤 모습일까."
     
     "정훈은 눈앞이 아득해지는 걸 느꼈다."
     centered "이룩할 수 있는 세상." with fade
@@ -78,16 +78,16 @@ label start:
     "그래서는 안 되는 줄 알면서도 망설이고 있다."
     "정훈은 한 발 앞으로 나서며 총구를 들이밀었다."
 
-    kog "불란서 말로 {color=highlight}희망{/color}이 무엇인가."
+    kog "불란서 말로 {color=#FF8C00}희망{/color}이 무엇인가."
 
     "정훈은 망설이다가 입을 열었다."
 
     jh "…Désir."
-    kog "{color=highlight}혁명{/color}은, 무엇인가."
+    kog "{color=#FF8C00}혁명{/color}은, 무엇인가."
     jh "Révolution."
-    kog "그럼… {color=highlight}동지{/color}는 무엇인가."
+    kog "그럼… {color=#FF8C00}동지{/color}는 무엇인가."
 
-    "이건 {color=highlight}시험{/color}이다."
+    "이건 {color=#FF8C00}시험{/color}이다."
     centered "잔인하고, 명료한 시험." with fade
 
     jh "……."
@@ -102,14 +102,14 @@ label start:
 
     #part 1
     scene sea with fade
-    "{color=highlight}갑판{/color}에 섰다."
+    "{color=#FF8C00}갑판{/color}에 섰다."
     "차디찬 바닷바람이 숨통을 조이듯 밀려든다."
     "감회가 새로울 거란 예상과는 달리," 
     "눈앞에 펼쳐진 광경에 모든 기대가 무너졌다."
 
     jh "그대로네…."
 
-    "십 년 전이나 지금이나, {color=highlight}조선{/color}은 다를 게 없었다."
+    "십 년 전이나 지금이나, {color=#FF8C00}조선{/color}은 다를 게 없었다."
     "어째서 달라진 게 아무것도 없나."
     "저 바다 건너 세상은 하루가 멀다하고 새로워지는데."
 
@@ -131,15 +131,15 @@ label start:
 
     iy "곧 눈이 올 모양입니다."
     iw "한바탕 장설이면 좋겠군."
-    iy "이제 더는 {color=highlight}청{/color}에 갈 일이 없으시겠지요?"
-    iw "그래. …{color=highlight}그 자{/color}와는 더 이상 할 말이 없어."
+    iy "이제 더는 {color=#FF8C00}청{/color}에 갈 일이 없으시겠지요?"
+    iw "그래. …{color=#FF8C00}그 자{/color}와는 더 이상 할 말이 없어."
 
     "사람은 둘."
     "중년 남자와 젊은 남자다."
     "걸음이 가까워진다."
     "정훈은 바닥에 꽂아두었던 시선을 올렸다."
 
-    "{color=highlight}나이 든 남자{/color}가 이쪽을 바라보고 있다."
+    "{color=#FF8C00}나이 든 남자{/color}가 이쪽을 바라보고 있다."
     "찰나 마주친 눈이 날카롭다."
 
     iw "……."
@@ -203,11 +203,11 @@ label start:
     "오랜만에 육지를 밟으니 발바닥이 허공에 뜬 느낌이다."
     "익숙하지 않은 걸음을 옮겼다."
     "선착장에 멍하니 서 있는 정훈에게 나이 든 여자가 다가왔다."
-    "차림을 보니 {color=highlight}궁인{/color}인 것 같았다."
+    "차림을 보니 {color=#FF8C00}궁인{/color}인 것 같았다."
 
-    pw "{color=highlight}불란서의 전보{/color}를 받고 온 분인지요."
+    pw "{color=#FF8C00}불란서의 전보{/color}를 받고 온 분인지요."
     jh "…그렇습니다."
-    pw "{color=highlight}나루{/color}까지는 말을 타고 가셔야 합니다."
+    pw "{color=#FF8C00}나루{/color}까지는 말을 타고 가셔야 합니다."
 
     menu:
         "…말을 탈 줄 모르는데.":
@@ -228,7 +228,7 @@ label start:
 
     scene street with fade
     "발 아래로 공기가 스친다."
-    "지나다니는 사람들은 죄다 {color=highlight}남루한 하얀 옷{/color}을 입고 있다."
+    "지나다니는 사람들은 죄다 {color=#FF8C00}남루한 하얀 옷{/color}을 입고 있다."
     "장옷을 걸친 상궁은 고개도 돌리지 않은 채 말했다."
 
     pw "주변에 시선을 주지 마십시오."
@@ -257,7 +257,7 @@ label start:
     pw "내 분명 언질 주었건만, 어찌 잠이나 자고 있단 말인가."
     ct "그, 그게… 유시가 다 되도록 오질 않으시니…."
     pw "됐네. 어서 이분을 뫼시게."
-    ct "예, 예… 이쪽으로 타시죠, {color=highlight}나리{/color}."
+    ct "예, 예… 이쪽으로 타시죠, {color=#FF8C00}나리{/color}."
 
     "‘나리’ 소리에 정훈은 놀란 듯 사공을 보았지만,"
     "그 자리에 있는 누구도 그런 걸 신경 쓰진 않는 것 같았다."
@@ -279,7 +279,7 @@ label part2:
 
     "이희는 붙박이듯 앉아 눈을 내리깔고 있었다."
     
-    umm "{color=highlight}가비{/color}라도 들일까요."
+    umm "{color=#FF8C00}가비{/color}라도 들일까요."
     emp "되었다."
     emp "…입이 쓰구나."
 
@@ -309,17 +309,17 @@ label part2:
 
     #scene palaceis
     scene black
-    pw "여기서부턴 {color=highlight}상선 영감{/color}를 따라가시면 됩니다."
+    pw "여기서부턴 {color=#FF8C00}상선 영감{/color}를 따라가시면 됩니다."
     jh "…고맙습니다."
 
     "상궁은 별다른 대꾸 없이 고개만 주억이고 사라졌다."
     "상선 영감이 문턱을 넘어 앞으로 다가왔다."
     
-    top "{color=highlight}정훈{/color}?"
+    top "{color=#FF8C00}정훈{/color}?"
     jh "그렇습니다."
     top "금일 입궐은 다른 이들에게 함구해야 할 것이다."
     jh "…예."
-    top "또한 전하의 용안을 바로 보아서는 아니되고 {color=highlight}하문하시는 것{/color}에만 답해야 한다."
+    top "또한 전하의 용안을 바로 보아서는 아니되고 {color=#FF8C00}하문하시는 것{/color}에만 답해야 한다."
     jh "그리하겠습니다."
     top "그리고…."
     umm "상선 영감."
@@ -328,7 +328,7 @@ label part2:
     "엄숙한 분위기의 여인이 서 있었다."
     "아마 대전을 뫼시는 상궁인 듯싶었다."
 
-    umm "그만하면 되셨습니다. {color=highlight}법도{/color}를 아주 모르는 자는 아닌 것 같으니."
+    umm "그만하면 되셨습니다. {color=#FF8C00}법도{/color}를 아주 모르는 자는 아닌 것 같으니."
     top "과연 이만하면 되는 것인가."
     umm "염려마십시오."
 
@@ -336,14 +336,14 @@ label part2:
 
     umm "따라오시게."
     
-    "정훈은 천천히 {color=highlight}편전{/color} 안으로 걸음을 옮겼다."
+    "정훈은 천천히 {color=#FF8C00}편전{/color} 안으로 걸음을 옮겼다."
 
     #scene palaceis
     umm "전하, 불란서에서 정훈이란 자가 들었습니다."
     emp "들라 하라."
 
     "문이 열렸다."
-    "정훈은 반투명한 장막 뒤에서 {color=highlight}빛나는 두 눈{/color}을 마주하였다."
+    "정훈은 반투명한 장막 뒤에서 {color=#FF8C00}빛나는 두 눈{/color}을 마주하였다."
     "정훈은…"
     menu:
         "그를 뚫어져라 바라보았다.":
@@ -351,12 +351,12 @@ label part2:
             emp "……."
             jh "……."
             top "네 이놈! 어서 엎드리지 못할까!"
-            top "전하, 안 되겠습니다. 이런 {color=highlight}무도한 자{/color}에게 믿고 맡길 일은 없습니다."
-            top "당장 이놈을 {color=highlight}매질{/color}하겠습니다!"
+            top "전하, 안 되겠습니다. 이런 {color=#FF8C00}무도한 자{/color}에게 믿고 맡길 일은 없습니다."
+            top "당장 이놈을 {color=#FF8C00}매질{/color}하겠습니다!"
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
-            centered "{color=highlight}엔딩 1{/color}. 너무나 많이 무엄한 죄"
+            centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
             show black with fade
             call polite
@@ -368,16 +368,16 @@ label part2:
     "정훈은 눈을 굴리다가 더듬거리며 겨우 대답했다."
 
     jh "예, …전하."
-    emp "불란서에서 {color=highlight}군인{/color}으로 지냈다지."
+    emp "불란서에서 {color=#FF8C00}군인{/color}으로 지냈다지."
 
     "정훈은 고개를 슬며시 들어 엄상궁을 돌아보았다."
     "엄상궁은 작게 눈짓하였다."
 
     jh "…그렇습니다."
-    emp "허면 {color=highlight}홍종우{/color}란 자를 아느냐."
+    emp "허면 {color=#FF8C00}홍종우{/color}란 자를 아느냐."
     centered "홍종우라면…."
     "정훈은 조선으로 떠나오기 직전, 소피와 나눈 대화를 떠올렸다."
-    soph "홍종우라는 {color=highlight}유학생{/color}이 있는데," with fade
+    soph "홍종우라는 {color=#FF8C00}유학생{/color}이 있는데," with fade
     jh "홍종우?"
     soph "이 책을 프랑스말로 번역해서 출간했대. 대단하지?"
     jh "……."
@@ -394,12 +394,12 @@ label part2:
             jh "전하, 그것이……."
             top "이놈이 어느 안전이라고 감히 거짓을 고하느냐!"
             "대체 저 어르신은 또 어디서 튀어나온 거야!"
-            top "전하! 당장 이놈을 {color=highlight}매질{/color}하겠습니다!"
+            top "전하! 당장 이놈을 {color=#FF8C00}매질{/color}하겠습니다!"
             jh "저, 전하!"
             emp "그리하라!"
             jh "전하!"
             jh "전하아!!!"
-            centered "{color=highlight}엔딩 2{/color}. 거짓말이야"
+            centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
             show black with fade
             call honor
@@ -415,7 +415,7 @@ label part2:
     emp "상관없다."
 
     "이희는 자리에서 천천히 자리에서 일어났다."
-    "정훈은 움찔하였으나, 엄상궁의 {color=highlight}서슬퍼런 눈빛{/color}에 차마 함부로 움직이지 못했다."
+    "정훈은 움찔하였으나, 엄상궁의 {color=#FF8C00}서슬퍼런 눈빛{/color}에 차마 함부로 움직이지 못했다."
     "이희는 얇은 손가락으로 장막을 걷어내고 정훈을 향해 한발짝 다가섰다."
     "그제야 보다못한 엄상궁이 임금 앞에 고개를 숙였다."
 
@@ -426,7 +426,7 @@ label part2:
     emp "엄아."
     umm "…예, 전하."
     emp "오늘이 며칠이냐."
-    umm "{color=highlight}12월 6일{/color}입니다."
+    umm "{color=#FF8C00}12월 6일{/color}입니다."
     emp "정훈."
 
     "정훈은 한참 숨죽이고 엎드려 있다 겨우 시선만 올렸다."
@@ -441,7 +441,7 @@ label part2:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
-            centered "{color=highlight}엔딩 3{/color}. 캐붕"
+            centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             show black with fade
             call jjan
@@ -458,7 +458,7 @@ label part2:
             emp "패륜아는 필요없다!"
             jh "전하, 잘못했습니다."
             jh "전하!!!"
-            centered "{color=highlight}엔딩 4{/color}. 패륜아"
+            centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
             show black with fade
             call jjan
@@ -467,15 +467,15 @@ label part2:
     "이희는 온몸이 쓰라린 듯한 표정으로 고개를 떨어뜨렸다."
     "이내 입술을 달싹이다가 도로 다물어버렸다."
     "그는 엄상궁을 바라보며 고개를 끄덕였다."
-    "그러자 엄상궁은 {color=highlight}비단봉투에 싸인 서찰{/color}을 머리맡에 내려놓았다."
+    "그러자 엄상궁은 {color=#FF8C00}비단봉투에 싸인 서찰{/color}을 머리맡에 내려놓았다."
     emp "…네가 할일은 간단하지만, 목숨을 걸어야 한다."
     emp "일을 꾸며 속이고 유인하여 결행해야 한다."
     emp "네가 본 것, 들은 것 모두 과인에게만 알리고 잊어야 한다."
     jh "……그래서, 제가 할일이 무엇입니까?"
     emp "……."
     "이희는 차갑게 식은 눈으로 허공 어딘가를 응시하였다."
-    "마치 그곳에 {color=highlight}김옥균{/color}이 있는 것처럼."
-    emp "홍종우의 이름으로 {color=highlight}역적 김옥균{/color}에게 접근해라."
+    "마치 그곳에 {color=#FF8C00}김옥균{/color}이 있는 것처럼."
+    emp "홍종우의 이름으로 {color=#FF8C00}역적 김옥균{/color}에게 접근해라."
     emp "그리고,"
     jh "……."
     emp "김옥균을… 죽여라."
@@ -486,21 +486,21 @@ label part2:
 #Part 3
 label part3:
     scene black with fade
-    "갑신년, 이제 막 {color=highlight}입추{/color}가 지났다."
+    "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
-    "정훈은 {color=highlight}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
+    "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
 
     #scene street with fade
 
     hjh "물 사려- 물 사려-"
     eus "정훈아, 여기 물 한 동이 주거라."
 
-    "아버지와 자주 왕래하는 {color=highlight}행상 주인 응식{/color}이다."
+    "아버지와 자주 왕래하는 {color=#FF8C00}행상 주인 응식{/color}이다."
     "아버지가 병상에 누운 후로는 심부름을 시키고 값을 준 고마운 사람이다."
     "정훈은 종종걸음으로 달려가 물동이를 내려놓았다."
 
-    hjh "예에, {color=highlight}이 전{/color}입니다."
-    eus "그래, {color=highlight}춘부장{/color}은 안녕하시고?"
+    hjh "예에, {color=#FF8C00}이 전{/color}입니다."
+    eus "그래, {color=#FF8C00}춘부장{/color}은 안녕하시고?"
     hjh "근래 들어 차도가 좀 있으십니다."
 
     "응식은 다행이라면서 물값을 치렀다."
@@ -508,7 +508,7 @@ label part3:
     "꾸벅 인사하고 물동이를 들려던 찰나, 응식이 그를 불러세웠다."
 
     eus "잠깐만 기다려라."
-    "응식은 유지에 싼 {color=highlight}약과{/color}를 건넸다."
+    "응식은 유지에 싼 {color=#FF8C00}약과{/color}를 건넸다."
     "이때 정훈은…."
     menu:
         "감사하게 약과를 받았다.":
@@ -517,7 +517,7 @@ label part3:
             "정훈은 약과를 호주머니에 넣었다."
             eus "지금 바로 먹지 않고?"
             hjh "아버지께서 약과를 좋아하셔서요."
-            eus "{color=highlight}한 씨{/color}는 복도 많지. 이런 아들을 두었으니."
+            eus "{color=#FF8C00}한 씨{/color}는 복도 많지. 이런 아들을 두었으니."
             "정훈은 어색하게 웃으며 아무 말도 하지 않았다."
             "응식은 곧 큰길 쪽을 가리켰다."
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
@@ -529,7 +529,7 @@ label part3:
             "응식은 한 번 더 권했지만, 정훈은 끝내 받지 않았다."
             eus "그럼 물 두 동이 마저 다오."
             "정훈은 우물쭈물하며 물 두 동이를 통에 부어주었다."
-            "응식은 물값을 치르고 {color=highlight}약값{/color}이라며 일 전을 더 얹어주었다."
+            "응식은 물값을 치르고 {color=#FF8C00}약값{/color}이라며 일 전을 더 얹어주었다."
             hjh "저는... 받을 수 없습니다."
             eus "아버지와의 의리라고 생각해다오."
             "정훈은 더 거절하기 민망해 감사히 받았다."
@@ -550,7 +550,7 @@ label part3:
             "정훈은 약과를 호주머니에 넣었다."
             eus "지금 바로 먹지 않고?"
             hjh "아버지께서 약과를 좋아하셔서요."
-            eus "{color=highlight}한 씨{/color}는 복도 많지. 이런 아들을 두었으니."
+            eus "{color=#FF8C00}한 씨{/color}는 복도 많지. 이런 아들을 두었으니."
             "정훈은 어색하게 웃으며 아무 말도 하지 않았다."
             "응식은 곧 큰길 쪽을 가리켰다."
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
@@ -563,7 +563,7 @@ label part3:
 label part4:
     "아직 해가 완전히 지지 않았다."
     "정훈은 푸르게 빛나는 하늘 아래에 섰다."
-    "탁 트인 {color=highlight}육조거리{/color}에는 마차와 가마가 오간다."
+    "탁 트인 {color=#FF8C00}육조거리{/color}에는 마차와 가마가 오간다."
     "정훈은 처마 아래에 숨어서 지나다니는 사람을 지켜보았다."
     "거리는 생각보다 평화롭다."
     "세상이 뒤집힐 기미 같은 건 보이지 않았다."
@@ -585,7 +585,7 @@ label part4:
             "사내 역시 한참이나 정훈을 바라보았다."
             "정훈은 끝까지 눈을 피하지 않았다."
             "부끄러워할 필요도, 이유도 없다고 생각했다."
-            "사내는 곧 희미한 미소를 보이고는 {color=highlight}광화문{/color}으로 들어갔다."
+            "사내는 곧 희미한 미소를 보이고는 {color=#FF8C00}광화문{/color}으로 들어갔다."
             "정훈은 다리에 힘이 풀려 그 자리에 주저앉고 말았다."
             centered "빛나는 두 눈의 저 사내는 누구지?"
             "정훈은 해가 완전히 지고 나서야 자리를 뜰 수 있었다."
@@ -618,12 +618,12 @@ label polite:
             emp "……."
             jh "……."
             top "네 이놈! 어서 엎드리지 못할까!"
-            top "전하, 안 되겠습니다. 이런 {color=highlight}무도한 자{/color}에게 믿고 맡길 일은 없습니다."
-            top "당장 이놈을 {color=highlight}매질{/color}하겠습니다!"
+            top "전하, 안 되겠습니다. 이런 {color=#FF8C00}무도한 자{/color}에게 믿고 맡길 일은 없습니다."
+            top "당장 이놈을 {color=#FF8C00}매질{/color}하겠습니다!"
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
-            centered "{color=highlight}엔딩 1{/color}. 너무나 많이 무엄한 죄"
+            centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
         "급하게 고개를 숙였다.":
             "정훈은 다급히 몸을 숙이고 고개를 바닥에 처박았다."
@@ -639,12 +639,12 @@ label honor:
             jh "전하, 그것이……."
             top "이놈이 어느 안전이라고 감히 거짓을 고하느냐!"
             "대체 저 어르신은 또 어디서 튀어나온 거야!"
-            top "전하! 당장 이놈을 {color=highlight}매질{/color}하겠습니다!"
+            top "전하! 당장 이놈을 {color=#FF8C00}매질{/color}하겠습니다!"
             jh "저, 전하!"
             emp "그리하라!"
             jh "전하!"
             jh "전하아!!!"
-            centered "{color=highlight}엔딩 2{/color}. 거짓말이야"
+            centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
 
         "솔직하게 모른다고 대답했다.":
@@ -653,6 +653,9 @@ label honor:
     return
 #엔딩 3/4: 아는 대로 대답하자
 label jjan:
+    emp "오늘이 무슨 날인지 아느냐."
+    "오늘은……."
+    
     menu:
         "임금의 생일이다.":
             emp "…아니다."
@@ -661,10 +664,10 @@ label jjan:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
-            centered "{color=highlight}엔딩 3{/color}. 캐붕"
+            centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             show black with fade
-            call jjan
+            jump jjan
 
         "김옥균이 일본으로 도망간 날이다.":
             emp "그래. 잘 알고 있구나. 온 나라가 떠들썩했으니."
@@ -675,20 +678,20 @@ label jjan:
             jh "사, 사실 거짓말입니다."
             jh "아무 말이나 둘러대려다보니…."
             "이희는 도끼눈으로 정훈을 바라보더니 그를 내쫓으라 했다."
-            emp "{color=highlight}패륜아{/color}는 필요없다!"
+            emp "{color=#FF8C00}패륜아{/color}는 필요없다!"
             jh "전하, 잘못했습니다."
             jh "전하!!!"
-            centered "{color=highlight}엔딩 4{/color}. 패륜아"
+            centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
             show black with fade
-            call jjan
+            jump jjan
     return
 #엔딩 5: 효도도 좋지만...
 label dutiful:
     "정훈은 약을 지어서 바로 집에 돌아왔다."
     "아버지는 일찍 잠에 드신 듯했다."
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
-    centered "{color=highlight}엔딩 5{/color}. 효자 정훈"
+    centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
     jump part3
 
@@ -710,7 +713,7 @@ label pmg:
     "주모가 값을 치렀다."
     hjh "감사합니다."
     "평상에서 국밥을 먹던 손님들이 숙덕거린다."
-    cus "{color=highlight}김옥균 선생{/color}이 일본에서 들어왔다지?"
+    cus "{color=#FF8C00}김옥균 선생{/color}이 일본에서 들어왔다지?"
     cus "이번엔 아주 이를 간 모양이야."
     cus "세상이 또 뒤집히겠구만…."
     cus "우리 사는 데 지장만 없으면 좋겠는데 말이야…."
