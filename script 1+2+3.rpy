@@ -32,7 +32,7 @@ define cus = Character('손님들', color="#FFD9FA", who_outlines=[(0.3, "#00000
 
 #변수
 init:
-    define choice = 0
+    define choice = -1
 
 # 게임 시작
 label start:
