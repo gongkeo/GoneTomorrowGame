@@ -701,7 +701,7 @@ label result:
         "노멀엔딩"
         #노멀엔딩 진행: 김옥균을 살리는 선택지는 없다
 
-#중간 에피소드
+#중간 에피소드 - 피맛골
 label pmg:
     scene black with fade
     hjh "물 사려- 물 사려-"
