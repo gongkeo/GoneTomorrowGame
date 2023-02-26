@@ -38,7 +38,7 @@ init:
     define choice = -1
 
 # 게임 시작
-label start:highlight
+label start:
     
     scene black
     pause 2
