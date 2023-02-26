@@ -485,7 +485,6 @@ label part2:
 
 #Part 3
 label part3:
-    scene black with fade
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
@@ -542,7 +541,7 @@ label part3:
                 "육조거리에 나가보기로 했다.":
                     jump part4
                 "아버지 약을 지어 일찍 집에 가기로 했다.":
-                    call dutiful
+                    jump dutiful
 
         "우물쭈물하며 대답하지 않았다.":
             "응식은 정훈의 손에 약과를 쥐여주었다."
@@ -629,15 +628,17 @@ label polite:
             jh "안돼!!!"
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
+            show black with fade
         "급하게 고개를 숙였다.":
             "정훈은 다급히 몸을 숙이고 고개를 바닥에 처박았다."
     return
+
 #엔딩 2: 솔직하게 대답하자
 label honor:
     jh "……."
     umm "전하께서 하문하시네."
     "정훈은 임금의 질문에…."
-    
+
     menu:
         "잘 아는 사이라고 둘러댔다.":
             jh "그럼요, 잘 알고 있습니다."
@@ -654,6 +655,7 @@ label honor:
             jh "전하아!!!"
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
+            show black with fade
 
         "솔직하게 모른다고 대답했다.":
             jh "실은… 이름만, 들어보았습니다."
@@ -701,6 +703,7 @@ label dutiful:
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
     centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
+    show black with fade
     jump part3
 
 #최종엔딩
