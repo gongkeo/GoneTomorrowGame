@@ -34,18 +34,20 @@ define cus = Character('손님들', color="#FFD9FA", who_outlines=[(0.3, "#00000
 define highlight = "#FF8C00"
 
 #변수
-init:
-    define choice = -1
+$ choice = -1
+
+#파이썬 구문
+init python:
+    achievement.register("ending1")
 
 # 게임 시작
 label start:
-    
     scene black
     pause 2
     show text "끝은 새로운 시작이니, 누군가는 그 길을 가야 한다." with dissolve
     pause 2
     hide text with dissolve
-
+    
     #Intro
     #장전음
     play sound "audio/Handling.mp3" 
@@ -356,6 +358,8 @@ label part2:
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
+            if not achievement.has("ending_1"):
+                $ get_achievement("ending_1", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
             show black with fade
@@ -399,6 +403,8 @@ label part2:
             emp "그리하라!"
             jh "전하!"
             jh "전하아!!!"
+            if not achievement.has("ending_2"):
+                $ get_achievement("ending_2", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
             show black with fade
@@ -441,6 +447,8 @@ label part2:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
+            if not achievement.has("ending_3"):
+                $ get_achievement("ending_3", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             show black with fade
@@ -458,6 +466,7 @@ label part2:
             emp "패륜아는 필요없다!"
             jh "전하, 잘못했습니다."
             jh "전하!!!"
+            $ get_achievement("ending_4", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
             show black with fade
@@ -486,7 +495,7 @@ label part2:
 #Part 3
 label part3:
     #회상인 걸 알 수 있는 효과음 넣기
-    
+
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
@@ -628,9 +637,12 @@ label polite:
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
+            if not achievement.has("ending_1"):
+                $ get_achievement("ending_1", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
             show black with fade
+            jump polite
         "급하게 고개를 숙였다.":
             "정훈은 다급히 몸을 숙이고 고개를 바닥에 처박았다."
     return
@@ -655,6 +667,8 @@ label honor:
             emp "그리하라!"
             jh "전하!"
             jh "전하아!!!"
+            if not achievement.has("ending_2"):
+                $ get_achievement("ending_2", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
             show black with fade
@@ -676,6 +690,8 @@ label jjan:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
+            if not achievement.has("ending_3"):
+                $ get_achievement("ending_3", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             show black with fade
@@ -693,6 +709,8 @@ label jjan:
             emp "{color=#FF8C00}패륜아{/color}는 필요없다!"
             jh "전하, 잘못했습니다."
             jh "전하!!!"
+            if not achievement.has("ending_4"):
+                $ get_achievement("ending_4", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
             show black with fade
@@ -703,6 +721,8 @@ label dutiful:
     "정훈은 약을 지어서 바로 집에 돌아왔다."
     "아버지는 일찍 잠에 드신 듯했다."
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
+    if not achievement.has("ending_5"):
+        $ get_achievement("ending_5", trans=achievement_transform)
     centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
     show black with fade
