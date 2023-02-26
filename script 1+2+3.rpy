@@ -1,4 +1,4 @@
-﻿# 게임 스크립트
+# 게임 스크립트
 default preferences.text_cps = 30
 
 # 이미지 정의
@@ -477,12 +477,12 @@ label part2:
     jh "……."
     emp "김옥균을… 죽여라."
 
-    scene black with fade
     jump part3
     return
 
 #Part 3
 label part3:
+    scene black with fade
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
@@ -520,7 +520,7 @@ label part3:
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
             hjh "예, 감사합니다."
             "정훈은 피맛길을 따라가기로 했다."
-            call pmg
+            jump pmg
 
         "받을 수 없다며 거절했다.":
             "응식은 한 번 더 권했지만, 정훈은 끝내 받지 않았다."
@@ -553,7 +553,7 @@ label part3:
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
             hjh "예, 감사합니다."
             "정훈은 피맛길을 따라가기로 했다."
-            call pmg
+            jump pmg
     return
 
 #Part 3-1
@@ -647,7 +647,6 @@ label honor:
         "솔직하게 모른다고 대답했다.":
             jh "실은… 이름만, 들어보았습니다."
             emp "그래."
-            return
     return
 #엔딩 3/4: 아는 대로 대답하자
 label jjan:
@@ -688,8 +687,7 @@ label dutiful:
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
     centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
-    call part3
-    return
+    jump part3
 
 #최종엔딩
 label result:
@@ -721,7 +719,7 @@ label pmg:
         "육조거리에 나가보기로 했다.":
             call part4
         "아버지 약을 지어 일찍 집에 가기로 했다.":
-            call dutiful
+            jump dutiful
     return
 
 
