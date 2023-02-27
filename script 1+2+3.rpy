@@ -374,11 +374,10 @@ label part2:
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
-            if not achievement.has("ending_1"):
-                $ get_achievement("ending_1", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
-            $ persistent.ending_1 = True
+            if not achievement.has("ending_1"):
+                $ persistent.ending_1 = True
             show black with fade
             call polite
         "급하게 고개를 숙였다.":
@@ -421,7 +420,7 @@ label part2:
             jh "전하!"
             jh "전하아!!!"
             if not achievement.has("ending_2"):
-                $ get_achievement("ending_2", trans=achievement_transform)
+                $ persistent.ending_2 = True
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
             $ persistent.ending_2 = True
@@ -465,8 +464,6 @@ label part2:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
-            if not achievement.has("ending_3"):
-                $ get_achievement("ending_3", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             $ persistent.ending_3 = True
@@ -660,11 +657,10 @@ label polite:
             jh "자, 자, 잠깐↗!!!"
             "당황한 정훈은 삑사리를 내고 말았다!"
             jh "안돼!!!"
-            if not achievement.has("ending_1"):
-                $ get_achievement("ending_1", trans=achievement_transform)
-                $ persistent.ending_1 = True
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
+            if not achievement.has("ending_1"):
+                $ persistent.ending_1 = True
             show black with fade
             jump polite
         "급하게 고개를 숙였다.":
@@ -691,11 +687,10 @@ label honor:
             emp "그리하라!"
             jh "전하!"
             jh "전하아!!!"
-            if not achievement.has("ending_2"):
-                $ get_achievement("ending_2", trans=achievement_transform)
-                $ persistent.ending_2 = True
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
+            if not achievement.has("ending_2"):
+                $ persistent.ending_2 = True
             show black with fade
 
         "솔직하게 모른다고 대답했다.":
@@ -715,11 +710,10 @@ label jjan:
             jh "예?"
             emp "겠냐고."
             jh "ㅈㅅ."
-            if not achievement.has("ending_3"):
-                $ get_achievement("ending_3", trans=achievement_transform)
-                $ persistent.ending_3 = True
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
+            if not achievement.has("ending_3"):
+                $ persistent.ending_3 = True
             show black with fade
             jump jjan
 
@@ -735,11 +729,10 @@ label jjan:
             emp "{color=#FF8C00}패륜아{/color}는 필요없다!"
             jh "전하, 잘못했습니다."
             jh "전하!!!"
-            if not achievement.has("ending_4"):
-                $ get_achievement("ending_4", trans=achievement_transform)
-                $ persistent.ending_4 = True
             centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
+            if not achievement.has("ending_4"):
+                $ persistent.ending_4 = True
             show black with fade
             jump jjan
     return
@@ -749,7 +742,6 @@ label dutiful:
     "아버지는 일찍 잠에 드신 듯했다."
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
     if not achievement.has("ending_5"):
-        $ get_achievement("ending_5", trans=achievement_transform)
         $ persistent.ending_5 = True
     centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
