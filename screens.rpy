@@ -295,7 +295,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("시작하기") action Start()
+            textbutton _("시작하기") action ShowMenu("episode")
 
         else:
 
@@ -304,6 +304,8 @@ screen navigation():
             textbutton _("저장하기") action ShowMenu("save")
 
         textbutton _("불러오기") action ShowMenu("load")
+
+        #textbutton _("에피소드 선택") action ShowMenu("episode")
 
         textbutton _("업적") action ShowMenu("achievements")
 
@@ -1110,17 +1112,139 @@ style help_label_text:
 ## 업적을 출력합니다.
 ##
 
-screen achievements():
+style mytextbutton:
+    idle_color "#888888"
+    hover_color "#ffffff"
 
-    # Ensure this replaces the main menu.
+
+init -1:
+    image ending0 = "gallery/ach.png"
+    image ending1 = "gallery/ach1.png"
+    image ending2 = "gallery/ach2.png"
+    image ending3 = "gallery/ach3.png"
+    image ending4 = "gallery/ach4.png"
+    image ending5 = "gallery/ach5.png"
+
+
+init python:
+    #Galleries settings - start
+    #list the CG gallery images here:
+    gallery_cg_items = ["ending1", "ending2", "ending3", "ending4"," ending5"]
+    #how many rows and columns in the gallery screens?
+    gal_rows = 1
+    gal_cols = 4
+    #thumbnail size in pixels:
+    thumbnail_x = 200
+    thumbnail_y = 200
+    #the setting above will work well with 4:3 screen ratio. Make sure to adjust it, if your are using 16:9 (such as 267x150) or something else.
+    #Galleries settings - end
+
+    gal_cells = gal_rows * gal_cols
+    g_cg = Gallery()
+    i=1
+    num_str=str(i)
+    for gal_item in gallery_cg_items:
+        num_str=str(i)
+        g_cg.button(gal_item + " butt")
+        g_cg.condition("persistent.ending_"+ num_str)
+        g_cg.image(gal_item)
+        i=i+1
+    g_cg.transition = fade
+    cg_page=0
+
+init +1 python:
+    #Here we create the thumbnails. We use a special "locked" image for CGs to prevent spoilers.
+    for gal_item in gallery_cg_items:
+        renpy.image (gal_item + " butt", im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y))
+
+screen achievements():
     tag menu
 
-    # The background.
-    #add "BACKGROUND"
+    use navigation
+    
+    frame:
+        add "bg_skyblue.png"
 
-    # A grid of buttons.
+        grid gal_rows gal_cols:
+            ypos 10
+            $ i = 0
+            $ next_cg_page = cg_page + 1            
+            if next_cg_page > int(len(gallery_cg_items)/gal_cells):
+                $ next_cg_page = 0
+            for gal_item in gallery_cg_items:
+                $ i += 1
+                if i <= (cg_page+1)*gal_cells and i>cg_page*gal_cells:
+                    add g_cg.make_button(gal_item + " butt", gal_item + " butt", im.Scale("gallery/locked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, top_margin=15, bottom_margin=15, right_margin=15, left_margin=15)
+            for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
+                null
+        frame:
+            xalign 0.5 yalign 0.97
+            vbox:
+                if len(gallery_cg_items)>gal_cells:
+                    textbutton _("다음") text_style "mytextbutton" action [SetVariable('cg_page', next_cg_page), ShowMenu("achievements")]
+        frame:
+            xalign 0.97 yalign 0.03
+            textbutton "돌아가기" action Return() xalign 0.5 yalign 0.5
+            
 
+## Epsiode Select 스크린 ###########################################################
+##
+## 이 스크린은 챕터 선택에 쓰입니다.
+##
 
+style mytextbutton:
+    idle_color "#888888"
+    hover_color "#ffffff"
+
+screen episode():
+    
+    tag menu
+
+    use navigation
+
+    grid 1 4:
+        xalign 0.5
+        yalign 0.5
+
+        #spacing 600
+        spacing 200
+
+        textbutton "Ep.1: 던져진 운명":
+            text_style "mytextbutton"
+            if persistent.part1:
+                action Start("part1")
+            else:
+                action ShowMenu("unlocked")
+                
+        textbutton "Ep.2":
+            text_style "mytextbutton"
+            if persistent.part2:
+                action Start("part2")
+            else:
+                action ShowMenu("unlocked")
+        
+        textbutton "Ep.3":
+            text_style "mytextbutton"
+            if persistent.part3:
+                action Start("part3")
+            else:
+                action ShowMenu("unlocked")
+        
+        textbutton "Ep.4":
+            text_style "mytextbutton"
+            if persistent.part4:
+                action Start("part4")
+            else:
+                action ShowMenu("unlocked")
+
+    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
+
+screen unlocked():
+    add "bg_black.png"
+    textbutton "아직 스토리를 진행하지 않았습니다.":
+        xalign 0.5
+        yalign 0.5
+        action Hide("unlocked")
 
 ################################################################################
 ## 그 외 스크린
