@@ -1257,7 +1257,7 @@ style mytext:
 
 init python:
     profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : persistent.ending_1,
-    "엔딩 2: 고종은 갑신정변 당시 자신을 두고 일본으로 도망친 김옥균에게 애증을 품고 있다." : persistent.ending_2,
+    "엔딩 2: 거짓말이야" : persistent.ending_2,
     "엔딩 3: 캐붕" : persistent.ending_3,
     "엔딩 4: 패륜아" : persistent.ending_4,
     "엔딩 5: 효자 정훈" : persistent.ending_5}
