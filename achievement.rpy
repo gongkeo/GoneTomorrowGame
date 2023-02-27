@@ -97,61 +97,21 @@ init python:
                                                             "cur_prog": 0, # current progress 
                                                             "max_prog": 3# maximal progress
                                                             },
-                                        "ending_1": {"type": 0, # One time achievement
-                                                            "title": "엔딩 1", # Also name for steam
-                                                            "text": "너무나 많이 무엄한 죄", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                        "coffee": {"type": 0,
+                                                            "title": "잡학정보 '가비'",
+                                                            "text": "커피. 고종은 외국에서 들여온 커피를 즐겨 마셨다. 심지어는 와플까지 즐겼을 정도로 서양문물, 특히 먹을거리에 진심이었다.",
+                                                            "icon": "images/icons/ach.png"
                                                             },
-                                        "ending_2": {"type": 0, # One time achievement
-                                                            "title": "엔딩 2", # Also name for steam
-                                                            "text": "거짓말이야", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
+                                        "lovehate": {"type": 0,
+                                                            "title": "인물정보 '애증'",
+                                                            "text": "고종은 갑신정변 당시 자신을 두고 일본으로 도망친 김옥균에게 애증을 품고 있다.",
+                                                            "icon": "images/icons/ach.png"
                                                             },
-                                        "ending_3": {"type": 0, # One time achievement
-                                                            "title": "엔딩 3", # Also name for steam
-                                                            "text": "캐붕", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_4": {"type": 0, # One time achievement
-                                                            "title": "엔딩 4", # Also name for steam
-                                                            "text": "패륜아", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_5": {"type": 0, # One time achievement
-                                                            "title": "엔딩 5", # Also name for steam
-                                                            "text": "효자 정훈", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            },
-                                        "ending_": {"type": 0, # One time achievement
-                                                            "title": "엔딩 ", # Also name for steam
-                                                            "text": "", # description
-                                                            "icon": "images/icons/ach.png" # 96x96 image
-                                                            }                   
+                                        "ending_": {"type": 0,
+                                                            "title": "엔딩 ",
+                                                            "text": "",
+                                                            "icon": "images/icons/ach.png"
+                                                            }              
                                         }
                                         
 
