@@ -1,4 +1,4 @@
-﻿transform achievement_transform:
+transform achievement_transform:
     on show:
         xalign .98 
         yalign -.3 
@@ -88,12 +88,12 @@ init python:
     persistent.achievements_dict = {"test1": {"type": 0, # One time achievement
                                                             "title": "Yay!", # Also name for steam
                                                             "text": "Wow you've achieved!", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "test2": {"type": 1, # Progress achievement
                                                             "title": "Progress!",
                                                             "text": "Making progress...",
-                                                            "icon": "images/icons/ach1.png",
+                                                            "icon": "images/icons/ach.png",
                                                             "cur_prog": 0, # current progress 
                                                             "max_prog": 3# maximal progress
                                                             },
@@ -105,52 +105,52 @@ init python:
                                         "ending_2": {"type": 0, # One time achievement
                                                             "title": "엔딩 2", # Also name for steam
                                                             "text": "거짓말이야", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_3": {"type": 0, # One time achievement
                                                             "title": "엔딩 3", # Also name for steam
                                                             "text": "캐붕", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_4": {"type": 0, # One time achievement
                                                             "title": "엔딩 4", # Also name for steam
                                                             "text": "패륜아", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_5": {"type": 0, # One time achievement
                                                             "title": "엔딩 5", # Also name for steam
                                                             "text": "효자 정훈", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             },
                                         "ending_": {"type": 0, # One time achievement
                                                             "title": "엔딩 ", # Also name for steam
                                                             "text": "", # description
-                                                            "icon": "images/icons/ach1.png" # 96x96 image
+                                                            "icon": "images/icons/ach.png" # 96x96 image
                                                             }                   
                                         }
                                         
