@@ -295,7 +295,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("시작하기") action ShowMenu("episode")
+            textbutton _("시작하기") action ShowMenu("episodes")
 
         else:
 
@@ -305,9 +305,9 @@ screen navigation():
 
         textbutton _("불러오기") action ShowMenu("load")
 
-        #textbutton _("에피소드 선택") action ShowMenu("episode")
+        textbutton _("엔딩") action ShowMenu("endings")
 
-        textbutton _("업적") action ShowMenu("achievements")
+        textbutton _("수집정보") action ShowMenu("achievements")
 
         textbutton _("환경설정") action ShowMenu("preferences")
 
@@ -1118,7 +1118,6 @@ style mytextbutton:
 
 
 init -1:
-    image ending0 = "gallery/ach.png"
     image ending1 = "gallery/ach1.png"
     image ending2 = "gallery/ach2.png"
     image ending3 = "gallery/ach3.png"
@@ -1127,17 +1126,17 @@ init -1:
 
 
 init python:
-    #Galleries settings - start
-    #list the CG gallery images here:
-    gallery_cg_items = ["ending1", "ending2", "ending3", "ending4"," ending5"]
-    #how many rows and columns in the gallery screens?
+    gallery_cg_items = ["ending1",
+    "ending2",
+    "ending3",
+    "ending4",
+    "ending5"]
+
     gal_rows = 1
     gal_cols = 4
-    #thumbnail size in pixels:
+
     thumbnail_x = 200
     thumbnail_y = 200
-    #the setting above will work well with 4:3 screen ratio. Make sure to adjust it, if your are using 16:9 (such as 267x150) or something else.
-    #Galleries settings - end
 
     gal_cells = gal_rows * gal_cols
     g_cg = Gallery()
@@ -1145,46 +1144,42 @@ init python:
     num_str=str(i)
     for gal_item in gallery_cg_items:
         num_str=str(i)
-        g_cg.button(gal_item + " butt")
+        g_cg.button(gal_item)
         g_cg.condition("persistent.ending_"+ num_str)
         g_cg.image(gal_item)
         i=i+1
     g_cg.transition = fade
     cg_page=0
 
-init +1 python:
-    #Here we create the thumbnails. We use a special "locked" image for CGs to prevent spoilers.
     for gal_item in gallery_cg_items:
-        renpy.image (gal_item + " butt", im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y))
+        renpy.image(gal_item, im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y))
 
 screen achievements():
     tag menu
 
     use navigation
     
-    frame:
-        add "bg_skyblue.png"
+    add "bg_skyblue.png"
 
-        grid gal_rows gal_cols:
-            ypos 10
-            $ i = 0
-            $ next_cg_page = cg_page + 1            
-            if next_cg_page > int(len(gallery_cg_items)/gal_cells):
-                $ next_cg_page = 0
-            for gal_item in gallery_cg_items:
-                $ i += 1
-                if i <= (cg_page+1)*gal_cells and i>cg_page*gal_cells:
-                    add g_cg.make_button(gal_item + " butt", gal_item + " butt", im.Scale("gallery/locked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, top_margin=15, bottom_margin=15, right_margin=15, left_margin=15)
-            for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
-                null
-        frame:
-            xalign 0.5 yalign 0.97
-            vbox:
-                if len(gallery_cg_items)>gal_cells:
-                    textbutton _("다음") text_style "mytextbutton" action [SetVariable('cg_page', next_cg_page), ShowMenu("achievements")]
-        frame:
-            xalign 0.97 yalign 0.03
-            textbutton "돌아가기" action Return() xalign 0.5 yalign 0.5
+    grid gal_rows gal_cols:
+        ypos 10
+        $ i = 0
+        $ next_cg_page = cg_page + 1            
+        if next_cg_page > int(len(gallery_cg_items)/gal_cells):
+            $ next_cg_page = 0
+        for gal_item in gallery_cg_items:
+            $ i += 1
+            if i <= (cg_page+1)*gal_cells and i>cg_page*gal_cells:
+                add g_cg.make_button(gal_item, gal_item, im.Scale("gallery/locked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, top_margin=15, bottom_margin=15, right_margin=15, left_margin=15)
+        for j in range(i, (cg_page+1)*gal_cells):
+            null
+    frame:
+        xalign 0.5 yalign 0.97
+        vbox:
+            if len(gallery_cg_items)>gal_cells:
+                textbutton _("다음") text_style "mytextbutton" action [SetVariable('cg_page', next_cg_page), ShowMenu("achievements")]
+    
+    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
             
 
 ## Epsiode Select 스크린 ###########################################################
@@ -1196,7 +1191,7 @@ style mytextbutton:
     idle_color "#888888"
     hover_color "#ffffff"
 
-screen episode():
+screen episodes():
     
     tag menu
 
@@ -1245,6 +1240,68 @@ screen unlocked():
         xalign 0.5
         yalign 0.5
         action Hide("unlocked")
+
+
+## Endings 스크린 ###########################################################
+##
+## 이 스크린은 엔딩 목록 확인에 쓰입니다.
+##
+style mytextbutton:
+    idle_color "#888888"
+    hover_color "#ffffff"
+
+style mytext:
+    first_indent 10
+    line_leading 20
+    line_spacing 20
+
+init python:
+    profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : persistent.ending_1,
+    "엔딩 2: 고종은 갑신정변 당시 자신을 두고 일본으로 도망친 김옥균에게 애증을 품고 있다." : persistent.ending_2,
+    "엔딩 3: 캐붕" : persistent.ending_3,
+    "엔딩 4: 패륜아" : persistent.ending_4,
+    "엔딩 5: 효자 정훈" : persistent.ending_5}
+
+    prf_rows = 1
+    prf_cols = 3
+    prf_cells = prf_rows * prf_cols    
+    prf_page = 0
+
+
+screen endings():
+    
+    tag menu
+
+    use navigation
+
+    add "bg_skyblue.png"
+
+    grid prf_rows prf_cols:
+        ypos 10
+        $ i = 0
+        $ next_prf_page = prf_page + 1     
+
+        if next_prf_page > int(len(profile_items)/prf_cells):
+            $ next_prf_page = 0
+        for prf_item in profile_items:
+            $ i += 1
+            if i <= (prf_page+1)*prf_cells and i>prf_page*prf_cells:
+                if profile_items[prf_item]:
+                    textbutton prf_item text_style "mytext"
+                else:
+                    textbutton "엔딩 ?: ??" text_style "mytext"
+        for j in range(i, (prf_page+1)*prf_cells):
+            null
+    
+    frame:
+        xalign 0.5 yalign 0.97
+        vbox:
+            if len(profile_items)> prf_cells:
+                textbutton _("다음") text_style "mytextbutton" action [SetVariable('prf_page', next_prf_page), ShowMenu("endings")]
+
+    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
+
+
 
 ################################################################################
 ## 그 외 스크린
