@@ -38,10 +38,25 @@ $ choice = -1
 
 #파이썬 구문
 init python:
-    achievement.register("ending1")
+    pass
+
+#지속데이터 정의
+default persistent.ending_1 = False
+default persistent.ending_2 = False
+default persistent.ending_3 = False
+default persistent.ending_4 = False
+default persistent.ending_5 = False
+
+default persistent.part1 = True
+default persistent.part2 = False
+default persistent.part3 = False
+default persistent.part4 = False
+
+label start:
+    return
 
 # 게임 시작
-label start:
+label part1:
     scene black
     pause 2
     show text "끝은 새로운 시작이니, 누군가는 그 길을 가야 한다." with dissolve
@@ -274,6 +289,7 @@ label start:
 
 #Part 2
 label part2:
+    $ persistent.part2 = True
     emp "아직이라더냐."
 
     scene palaceos with fade
@@ -362,6 +378,7 @@ label part2:
                 $ get_achievement("ending_1", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
+            $ persistent.ending_1 = True
             show black with fade
             call polite
         "급하게 고개를 숙였다.":
@@ -407,6 +424,7 @@ label part2:
                 $ get_achievement("ending_2", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
+            $ persistent.ending_2 = True
             show black with fade
             call honor
         "솔직하게 모른다고 대답했다.":
@@ -451,6 +469,7 @@ label part2:
                 $ get_achievement("ending_3", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
+            $ persistent.ending_3 = True
             show black with fade
             call jjan
 
@@ -469,6 +488,7 @@ label part2:
             $ get_achievement("ending_4", trans=achievement_transform)
             centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
+            $ persistent.ending_4 = True
             show black with fade
             call jjan
 
@@ -494,6 +514,7 @@ label part2:
 
 #Part 3
 label part3:
+    $ persistent.part3 = True
     #회상인 걸 알 수 있는 효과음 넣기
 
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
@@ -571,6 +592,8 @@ label part3:
 
 #Part 3-1
 label part4:
+    $ persistent.part4 = True
+
     "아직 해가 완전히 지지 않았다."
     "정훈은 푸르게 빛나는 하늘 아래에 섰다."
     "탁 트인 {color=#FF8C00}육조거리{/color}에는 마차와 가마가 오간다."
@@ -639,6 +662,7 @@ label polite:
             jh "안돼!!!"
             if not achievement.has("ending_1"):
                 $ get_achievement("ending_1", trans=achievement_transform)
+                $ persistent.ending_1 = True
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
             show black with fade
@@ -669,6 +693,7 @@ label honor:
             jh "전하아!!!"
             if not achievement.has("ending_2"):
                 $ get_achievement("ending_2", trans=achievement_transform)
+                $ persistent.ending_2 = True
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
             show black with fade
@@ -692,6 +717,7 @@ label jjan:
             jh "ㅈㅅ."
             if not achievement.has("ending_3"):
                 $ get_achievement("ending_3", trans=achievement_transform)
+                $ persistent.ending_3 = True
             centered "{color=#FF8C00}엔딩 3{/color}. 캐붕"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
             show black with fade
@@ -711,6 +737,7 @@ label jjan:
             jh "전하!!!"
             if not achievement.has("ending_4"):
                 $ get_achievement("ending_4", trans=achievement_transform)
+                $ persistent.ending_4 = True
             centered "{color=#FF8C00}엔딩 4{/color}. 패륜아"
             centered "스산한 그 겨울밤을 떠올리자."
             show black with fade
@@ -723,6 +750,7 @@ label dutiful:
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
     if not achievement.has("ending_5"):
         $ get_achievement("ending_5", trans=achievement_transform)
+        $ persistent.ending_5 = True
     centered "{color=#FF8C00}엔딩 5{/color}. 효자 정훈"
     centered "일탈해보자."
     show black with fade
