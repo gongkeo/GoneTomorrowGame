@@ -312,6 +312,7 @@ label part2:
     "이희는 붙박이듯 앉아 눈을 내리깔고 있었다."
     
     umm "{color=#FF8C00}가비{/color}라도 들일까요."
+    $ get_achievement("coffee", trans=achievement_transform)
     emp "되었다."
     emp "…입이 쓰구나."
 
@@ -337,6 +338,7 @@ label part2:
     "이 빛이 그곳에도 가 닿길."
     show black
     centered "그대도 반드시 아프길." with fade
+    $ get_achievement("lovehate", trans=achievement_transform)
     hide black
 
     #scene palaceis
@@ -348,6 +350,7 @@ label part2:
     "늙수그레한 환관 한 명이 문턱을 넘어 앞으로 다가왔다."
     
     top "{color=#FF8C00}정훈{/color}?"
+    $ get_achievement("sangseon", trans=achievement_transform)
     jh "그렇습니다."
     top "금일 입궐은 다른 이들에게 함구해야 할 것이다."
     jh "…예."
@@ -369,6 +372,7 @@ label part2:
     umm "따라오시게."
     
     "정훈은 천천히 {color=#FF8C00}편전{/color} 안으로 걸음을 옮겼다."
+    $ get_achievement("pyeonjeon", trans=achievement_transform)
 
     #scene palaceis
     umm "전하, 불란서에서 정훈이란 자가 들었습니다."
@@ -490,6 +494,7 @@ label part2:
             emp "그래. 모를 수도 있지. 벌써 구 년 전 일이니 말이다."
             jh "……."
             emp "김옥균을 아느냐."
+            $ get_achievement("okgyoon", trans=achievement_transform)
             jh "…알고 있습니다."
             jh "그러면 되었다."
 
@@ -526,6 +531,7 @@ label part3:
     scene black with fade
 
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
+    $ get_achievement("gapshin", trans=achievement_transform)
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
 
@@ -562,6 +568,7 @@ label part3:
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
             hjh "예, 감사합니다."
             "정훈은 피맛길을 따라가기로 했다."
+            $ get_achievement("pimatgil", trans=achievement_transform)
             jump pmg
 
         "받을 수 없다며 거절했다.":
@@ -574,6 +581,7 @@ label part3:
             "정훈은 더 거절하기 민망해 감사히 받았다."
             "정훈은 일 전을 호주머니에 마저 넣었다."
             eus "곧 해가 지겠구나. 오늘치 약은 지었니."
+            $ get_achievement("sick", trans=achievement_transform)
             hjh "지어서 들어가야죠. 오늘도 감사했습니다."
             "응식은 웃으며 정훈의 머리를 쓰다듬어주었다."
             "정훈은 육조거리로 향하는 피맛길과 종각으로 향하는 시전 사이에서 고민했다."
@@ -605,6 +613,7 @@ label part4:
     "아직 해가 완전히 지지 않았다."
     "정훈은 푸르게 빛나는 하늘 아래에 섰다."
     "탁 트인 {color=#FF8C00}육조거리{/color}에는 마차와 가마가 오간다."
+    $ get_achievement("yookjo", trans=achievement_transform)
     "정훈은 처마 아래에 숨어서 지나다니는 사람을 지켜보았다."
     "거리는 생각보다 평화롭다."
     "세상이 뒤집힐 기미 같은 건 보이지 않았다."
@@ -663,6 +672,7 @@ label part5:
     "그는 엄 상궁을 향해 가볍게 눈짓할 뿐이었다."
     
     umm "{color=#FF8C00}홍종우{/color}는 글을 쓰는 문인, 사람을 죽일 그릇이 못 되네."
+    $ get_achievement("hongjongwoo", trans=achievement_transform)
     umm "명분은 홍종우가, {color=#FF8C00}몸뚱아리{/color}는 자네가 빌려주게."
     jh "……."
     emp "…김옥균을 죽이면, 네가 원하는 모든 것을 들어주겠다."
@@ -685,6 +695,7 @@ label part5:
     centered "감히 비상하리란 꿈을 가졌나."
     centered "인생이란, 얼어붙은 진창에 처박히는 것일 뿐인데."
     "어차피 {color=#FF8C00}던져진 운명{/color}이다."
+    $ get_achievement("destiny", trans=achievement_transform)
     "정훈은 주먹을 세게 쥐고 한성을 빠져나갔다."
 
     #scene night sea
@@ -756,6 +767,7 @@ label part6:
     "정훈은 헐떡이며 겨우 몸을 일으켰다."
     "…또 {color=#FF8C00}그 꿈{/color}이다."
     "파견을 갔다 오면 으레 꾸던 꿈."
+    $ get_achievement("nightmare", trans=achievement_transform)
     "한동안 멀어졌다고 생각했는데, 조선을 떠나면서부터 하루도 거르지 않고 찾아왔다."
     "정훈은 손바닥으로 얼굴을 감싸고 숨을 몰아쉬었다."
     jh "……."
@@ -763,6 +775,7 @@ label part6:
     "여전히 숨을 쉬고 있기에 괴롭다."
     "정훈은 떨리는 손을 뻗어 가방을 뒤적였다."
     "{color=#FF8C00}궐련{/color} 한 개비를 입에 물고 라이터를 열었다."
+    $ get_achievement("cigarette", trans=achievement_transform)
     "딸깍이는 소리와 함께 불이 붙는다."
     "생각이 연기처럼 어지럽게 뒤엉켰다."
     "상념이 사라지길 바라진 않았다."
@@ -790,6 +803,7 @@ label part6:
     "정훈은 제 처지가 참 우습다고 생각했다."
     "이름을 잊고 산 지 오래인데, 막상 다른 사람이 되라 하니 그럴 수 없음을 뼈저리게 깨닫는다."
     "내가 버린 이름까지 {color=#FF8C00}낙인{/color}이 되어 나를 따라다닌다."
+    $ get_achievement("name", trans=achievement_transform)
     "내가 버린 나라까지 무게가 되어 나를 짓누른다."
 
     jh "홍종우…."
@@ -833,12 +847,14 @@ label part7:
             kog "홍종우라고 했지."
             jy "그래. 불란서에서 외무장관과 독대까지 했던 인사라고 하네."
             kog "…{color=#FF8C00}이홍장{/color}에게 들렀다 오는 길이면 여독이 이만저만 아니겠군."
+            $ get_achievement("leehongjang", trans=achievement_transform)
             "나직이 흐르는 옥균의 음성이 의미심장했다."
         "조선에 있을 그분에 관하여":
             kog "혹시 조선에서 들어온 소식은 없나."
             jy "…전하의 안위가 궁금한가."
             kog "그리 들렸다면 하는 수 없지."
             jy "근래 전주에서 일이 터진 모양이더군. 농민들이 {color=#FF8C00}봉기{/color}를 일으켰다고."
+            $ get_achievement("donghak", trans=achievement_transform)
             kog "……."
             jy "무슨 생각을 하나."
             kog "글쎄. …내가 조선에 있었다면 어떤 쪽에 힘이 되었을까 생각해 보았네."
@@ -897,6 +913,7 @@ label part7:
             hsg2 "그리 딱딱하게 굴 거 없소. 어차피 같은 처지 아니오?"
             jh "……."
             hsg2 "뭐, 상황이 상황이라 통성명은 못 하지만, 홍승규라 부르시오."
+            $ get_achievement("hongseunggyoo", trans=achievement_transform)
             jh "홍승규…."
             hsg1 "누가 물으면 그대 홍종우와는 친척 사이인 거요."
 
@@ -959,6 +976,7 @@ label part8:
     "그때, 옥균을 찾은 하지메가 언덕 위에서 환하게 웃어 보였다."
     "그는 빠르게 달려와 뒤에 선 사내를 소개했다."
     hjm "선생님, {color=#FF8C00}이일신 선생{/color}께서 소개하라고 하신 분을 모시고 왔습니다."
+    $ get_achievement("leeyiljik", trans=achievement_transform)
     "와다는 사내의 앞을 가로막고 양손을 들어 올릴 것을 청했다."
     "그러자 사내는 말 없이 수긍하며 순순히 몸수색에 응했다."
     jh "…홍종우라고 합니다. 이렇게 만나 뵙게 되어, 영광입니다."
@@ -966,6 +984,7 @@ label part8:
     "저를 향해 뻗은 다부진 손을 흘끔거렸다."
     "그는 곧 여유가 흐르는 웃음을 지었다."
     kog "자네 {color=#FF8C00}20엔{/color} 있나?"
+    $ get_achievement("silly", trans=achievement_transform)
     "당혹스러움을 감추지 못한 {color=#FF8C00}눈빛{/color}이 흔들린다."
     "옥균은 저 눈을 잘 알았다."
     "긴장한 태가 나는 것으로 보아 둘 중 하나겠지."
