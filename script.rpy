@@ -39,8 +39,8 @@ define hjm = Character('하지메', color="#FFD9FA", who_outlines=[(0.3, "#00000
 define highlight = "#FF8C00"
 
 #변수
-$ choice = -1
-$ kog_like = 0
+default _choice = -1
+default kog_like = 0
 
 #파이썬 구문
 init python:
@@ -191,6 +191,7 @@ label part1:
                     iw "패기가 마음에 드는군."
                     jh "……."
                     iw "나는 조선의 총리대신, 이완일세."
+                    $ get_achievement("leewan", trans=achievement_transform)
                     "정훈은 마지못해 고개를 숙였다."
                     "이완은 비릿한 웃음을 띠고 말했다."
                     iw "또 보지."
@@ -522,6 +523,7 @@ label part2:
 label part3:
     $ persistent.part3 = True
     #회상인 걸 알 수 있는 효과음 넣기
+    scene black with fade
 
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
@@ -619,7 +621,7 @@ label part4:
     "이때 정훈은…"
     menu:
         "눈싸움이라도 하듯 마찬가지로 눈을 떼지 않는다.":
-            $ choice = 1
+            $ _choice = 1
             $ kog_like += 1
             "눈이 마주쳤다."
             "사내 역시 한참이나 정훈을 바라보았다."
@@ -633,7 +635,7 @@ label part4:
             jump part5
 
         "도망치듯 집으로 달려간다.":
-            $ choice = 0
+            $ _choice = 0
             "정훈은 집까지 빠르게 달렸다."
             "분명 그 사내는 나를 보지 못했을 것이다."
             "보지 못했어야 한다."
@@ -1094,7 +1096,7 @@ label dutiful:
 
 #최종엔딩
 label result:
-    if choice == 1:
+    if __choice == 1:
         "트루엔딩"
         #트루엔딩 진행: 김옥균을 살릴 수 있다
     else:
