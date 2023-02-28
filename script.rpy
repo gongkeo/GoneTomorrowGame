@@ -4,16 +4,11 @@ default preferences.text_cps = 30
 # 이미지 정의
 image black = "bg_black.png"
 image sea = "bg_sea.jpg"
-image nightsea = "bg_nightsea.jpg"
+image river = "bg_river.jpg"
 image hallway = "bg_hallway.jpg"
 image harbor = "bg_harbor.jpg"
 image street = "bg_street.jpg"
-image tatami = "bg_tatami.jpg"
-image nightstreet = "bg_nightstreet.jpg"
 image palaceos = "bg_palaceos.jpg"
-image palaceos = "bg_palaceis.jpg"
-image deck = "bg_deck.jpg"
-image hotel = "bg_hotel.jpg"
 
 #메인 캐릭터
 define jh = Character('정훈', color="#a0a0a0", who_outlines=[(0.3, "#000000")])
@@ -45,6 +40,7 @@ define highlight = "#FF8C00"
 
 #변수
 $ choice = -1
+$ kog_like = 0
 
 #파이썬 구문
 init python:
@@ -277,7 +273,7 @@ label part1:
 
     "두 사람은 나루에 닿을 때까지 아무 말도 하지 않았다."
 
-    scene black with fade
+    scene river with fade
     "강가에 배 한 척이 묶여있다."
     "사공은 뱃전에서 꾸벅꾸벅 졸고 있다."
     "상궁은 곧장 다가가 사공에게 일렀다."
@@ -309,7 +305,7 @@ label part2:
     $ persistent.part2 = True
     emp "아직이라더냐."
 
-    scene palaceis with fade
+    scene palaceos with fade
     umm "곧 당도할 것입니다."
 
     "이희는 붙박이듯 앉아 눈을 내리깔고 있었다."
@@ -342,7 +338,7 @@ label part2:
     centered "그대도 반드시 아프길." with fade
     hide black
 
-    scene palaceos with fade
+    #scene palaceis
     scene black
     pw "여기서부턴 {color=#FF8C00}상선 영감{/color}을 따라가시면 됩니다."
     jh "…고맙습니다."
@@ -373,7 +369,7 @@ label part2:
     
     "정훈은 천천히 {color=#FF8C00}편전{/color} 안으로 걸음을 옮겼다."
 
-    #scene palaceis with fade
+    #scene palaceis
     umm "전하, 불란서에서 정훈이란 자가 들었습니다."
     emp "들라 하라."
 
@@ -486,6 +482,7 @@ label part2:
             call jjan
 
         "김옥균이 일본으로 도망간 날이다.":
+            $ kog_like += 1
             emp "그래. 잘 알고 있구나. 온 나라가 떠들썩했으니."
 
         "제가 그걸 어찌….":
@@ -530,7 +527,7 @@ label part3:
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
 
-    scene street with fade
+    #scene street with fade
 
     hjh "물 사려- 물 사려-"
     eus "정훈아, 여기 물 한 동이 주거라."
@@ -602,7 +599,7 @@ label part3:
 #Part 3-1
 label part4:
     $ persistent.part4 = True
-    scene street with fade
+
     "아직 해가 완전히 지지 않았다."
     "정훈은 푸르게 빛나는 하늘 아래에 섰다."
     "탁 트인 {color=#FF8C00}육조거리{/color}에는 마차와 가마가 오간다."
@@ -623,6 +620,7 @@ label part4:
     menu:
         "눈싸움이라도 하듯 마찬가지로 눈을 떼지 않는다.":
             $ choice = 1
+            $ kog_like += 1
             "눈이 마주쳤다."
             "사내 역시 한참이나 정훈을 바라보았다."
             "정훈은 끝까지 눈을 피하지 않았다."
@@ -659,7 +657,6 @@ label part5:
     "물어야 했다."
     "왜 나인지."
     "왜 하필 나인지."
-    scene palaceis with fade
     "이희는 정훈을 흘긋 바라보더니 입을 열지 않았다."
     "그는 엄 상궁을 향해 가볍게 눈짓할 뿐이었다."
     
@@ -688,7 +685,7 @@ label part5:
     "어차피 {color=#FF8C00}던져진 운명{/color}이다."
     "정훈은 주먹을 세게 쥐고 한성을 빠져나갔다."
 
-    scene nightsea with fade
+    #scene night sea
     #파도소리
     kog "바닷바람도 좋고."
 
@@ -753,7 +750,7 @@ label part6:
 
     jh "허억, 윽…."
 
-    scene hallway with fade
+    scene harbor with fade
     "정훈은 헐떡이며 겨우 몸을 일으켰다."
     "…또 {color=#FF8C00}그 꿈{/color}이다."
     "파견을 갔다 오면 으레 꾸던 꿈."
@@ -773,13 +770,14 @@ label part6:
     "정훈은 결국…."
     menu ship:
         "갑판으로 나갔다.":
+            $ kog_like += 1
             "정훈은 갑판에 나가 바람이라도 쐬어보기로 했다."
         "다시 누워 잠을 청했다.":
             "정훈은 몸을 웅크리고 다시 잠을 청하기로 했다."
             "앞으로의 날에 비하면 이 정도 악몽은 아무것도 아니리라."
             jump part7
     
-    scene nightsea with fade
+    #scene night sea
     #파도소리
     jh "……."
     "공기가 견딜 수 없이 시리다."
@@ -802,7 +800,7 @@ label part6:
     return
 
 label part7:
-    scene nightstreet with fade
+    #scene night street
     "웃고 떠드는 사람이 거리를 메우고 있었다."
     "옥균은 만면 가득 여유로운 웃음을 띠고 완보로 걸었다."
 
@@ -849,14 +847,14 @@ label part7:
     kog "그래. 그만 들어가지, 들어가."
     "세 사람은 천천히 인파 사이로 사라졌다."
 
-    scene black with fade
+    #scene day street
     "하늘이 맑다."
     "정훈은 기차역에서 나와 거리로 나섰다."
     "그의 손에는 작은 쪽지가 들려있다."
     "'Hotel 新星 321號'"
     "빠른 걸음으로 거리를 가로질러 호텔로 향했다."
 
-    scene hallway with fade
+    #scene hotel
     "붉은 카펫이 길게 늘어진 로비에 들어섰다."
     "계단 끝에 중절모를 눌러쓴 두 명의 사내가 서 있다."
     "그들은 분명 이쪽을 바라보고 있었다."
@@ -886,7 +884,6 @@ label part7:
             "정훈은 그만 잠에 들었다."
             jump part8
         "밖에 나가보기로 했다.":
-            scene nightstreet with fade
             "호텔 밖으로 나서자 좀 전에 만났던 이 중 {color=#FF8C00}큰 눈을 가진 자{/color}가 서 있었다."
             hsg2 "할 말이 있는 거요?"
             "정훈은 대뜸 묻는 말에 둘러댔다."
@@ -939,7 +936,7 @@ label part7:
     return
 
 label part8:
-    scene nightstreet with fade
+    #scene night street with fade
     "축제가 한창이었다."
     "{color=#FF8C00}무도자들{/color}이 일렬로 서 춤을 선보였다."
     "옥균은 주머니에 손을 꽂은 채 어딘가를 망연히 바라보고 있었다."
@@ -1073,6 +1070,7 @@ label jjan:
             jump jjan
 
         "김옥균이 일본으로 도망간 날이다.":
+            $ kog_like += 1
             emp "그래. 잘 알고 있구나. 온 나라가 떠들썩했으니."
 
         "제가 그걸 어찌….":
@@ -1126,6 +1124,5 @@ label pmg:
         "아버지 약을 지어 일찍 집에 가기로 했다.":
             jump dutiful
     return
-
 
 
