@@ -1258,10 +1258,10 @@ screen unlocked():
 ##
 
 init python:
-    profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : persistent.ending_1,
-    "엔딩 2: 거짓말이야" : persistent.ending_2,
-    "엔딩 3: 아첨은 그만" : persistent.ending_3,
-    "엔딩 4: 효자 정훈" : persistent.ending_4}
+    profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : achievement.has("ending1"),
+    "엔딩 2: 거짓말이야" : achievement.has("ending2"),
+    "엔딩 3: 아첨은 그만" : achievement.has("ending3"),
+    "엔딩 4: 효자 정훈" : achievement.has("ending4")}
 
 screen endings():
     
