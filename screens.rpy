@@ -308,10 +308,6 @@ screen navigation():
 
             textbutton _("저장하기") action ShowMenu("save")
 
-        textbutton _("불러오기") action ShowMenu("load")
-
-        textbutton _("환경설정") action ShowMenu("preferences")
-
         #textbutton _("엔딩목록") action ShowMenu("endings")
 
         #textbutton _("수집정보") action ShowMenu("achievements")
@@ -323,6 +319,10 @@ screen navigation():
         elif not main_menu:
 
             textbutton _("메인 메뉴") action MainMenu()
+        
+        textbutton _("불러오기") action ShowMenu("load")
+
+        textbutton _("환경설정") action ShowMenu("preferences")
 
         #textbutton _("버전정보") action ShowMenu("about")
 
@@ -1257,12 +1257,6 @@ screen unlocked():
 ## 이 스크린은 엔딩 목록 확인에 쓰입니다.
 ##
 
-init python:
-    profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : achievement.has("ending1"),
-    "엔딩 2: 거짓말이야" : achievement.has("ending2"),
-    "엔딩 3: 아첨은 그만" : achievement.has("ending3"),
-    "엔딩 4: 효자 정훈" : achievement.has("ending4")}
-
 screen endings():
     
     tag menu
@@ -1271,10 +1265,10 @@ screen endings():
 
         style_prefix "ending"
 
-        for prf_item in profile_items:
+        for prf_item in persistent.profile_items:
 
-            if profile_items[prf_item]:
-                text prf_item
+            if achievement.has(prf_item):
+                text persistent.profile_items[prf_item]
             else:
                 text "엔딩 ?: ??"
 
