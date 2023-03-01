@@ -253,7 +253,6 @@ screen quick_menu():
             textbutton _("저장하기") action ShowMenu('save')
             textbutton _("Q.저장하기") action QuickSave()
             textbutton _("Q.불러오기") action QuickLoad()
-            textbutton _("업적") action ShowMenu('achievements')
             textbutton _("설정") action ShowMenu('preferences')
 
 
@@ -297,6 +296,12 @@ screen navigation():
 
             textbutton _("시작하기") action ShowMenu("episodes")
 
+            textbutton _("엔딩목록") action ShowMenu("endings")
+
+            textbutton _("수집정보") action ShowMenu("achievements")
+
+            textbutton _("버전정보") action ShowMenu("about")
+
         else:
 
             textbutton _("대사록") action ShowMenu("history")
@@ -305,11 +310,11 @@ screen navigation():
 
         textbutton _("불러오기") action ShowMenu("load")
 
-        textbutton _("엔딩") action ShowMenu("endings")
-
-        textbutton _("수집정보") action ShowMenu("achievements")
-
         textbutton _("환경설정") action ShowMenu("preferences")
+
+        #textbutton _("엔딩목록") action ShowMenu("endings")
+
+        #textbutton _("수집정보") action ShowMenu("achievements")
 
         if _in_replay:
 
@@ -319,7 +324,7 @@ screen navigation():
 
             textbutton _("메인 메뉴") action MainMenu()
 
-        textbutton _("버전정보") action ShowMenu("about")
+        #textbutton _("버전정보") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -1109,78 +1114,85 @@ style help_label_text:
 
 ## Achievements 스크린 #####################################################################
 ##
-## 업적을 출력합니다.
+## 수집 정보를 출력합니다.
 ##
 
 style mytextbutton:
     idle_color "#888888"
     hover_color "#ffffff"
 
-
-init -1:
-    image ending1 = "gallery/ach1.png"
-    image ending2 = "gallery/ach2.png"
-    image ending3 = "gallery/ach3.png"
-    image ending4 = "gallery/ach4.png"
-    image ending5 = "gallery/ach5.png"
-
-
-init python:
-    gallery_cg_items = ["ending1",
-    "ending2",
-    "ending3",
-    "ending4",
-    "ending5"]
-
-    gal_rows = 1
-    gal_cols = 4
-
-    thumbnail_x = 200
-    thumbnail_y = 200
-
-    gal_cells = gal_rows * gal_cols
-    g_cg = Gallery()
-    i=1
-    num_str=str(i)
-    for gal_item in gallery_cg_items:
-        num_str=str(i)
-        g_cg.button(gal_item)
-        g_cg.condition("persistent.ending_"+ num_str)
-        g_cg.image(gal_item)
-        i=i+1
-    g_cg.transition = fade
-    cg_page=0
-
-    for gal_item in gallery_cg_items:
-        renpy.image(gal_item, im.Scale(ImageReference(gal_item), thumbnail_x, thumbnail_y))
-
 screen achievements():
     tag menu
 
-    use navigation
-    
-    add "bg_skyblue.png"
+    default info_category = "person"
 
-    grid gal_rows gal_cols:
-        ypos 10
-        $ i = 0
-        $ next_cg_page = cg_page + 1            
-        if next_cg_page > int(len(gallery_cg_items)/gal_cells):
-            $ next_cg_page = 0
-        for gal_item in gallery_cg_items:
-            $ i += 1
-            if i <= (cg_page+1)*gal_cells and i>cg_page*gal_cells:
-                add g_cg.make_button(gal_item, gal_item, im.Scale("gallery/locked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, top_margin=15, bottom_margin=15, right_margin=15, left_margin=15)
-        for j in range(i, (cg_page+1)*gal_cells):
-            null
-    frame:
-        xalign 0.5 yalign 0.97
+    use game_menu(_("수집정보"), scroll="viewport"):
+
+        style_prefix "ach"
+
         vbox:
-            if len(gallery_cg_items)>gal_cells:
-                textbutton _("다음") text_style "mytextbutton" action [SetVariable('cg_page', next_cg_page), ShowMenu("achievements")]
-    
-    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
-            
+            spacing 23
+
+            hbox:
+
+                textbutton _("인물정보") action SetScreenVariable("info_category", "person")
+                textbutton _("잡학정보") action SetScreenVariable("info_category", "extra")
+
+            if info_category == "person":
+                use person_info
+            elif info_category == "extra":
+                use extra_info
+
+
+screen person_info():
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 0:
+            if achievement.has(ach_word):
+                vbox:
+                    xoffset 25
+                    label persistent.achievements_dict[ach_word]["title_"]
+                    text persistent.achievements_dict[ach_word]["text"]
+            #else:
+                #vbox:
+                    #xoffset 25
+                    #label persistent.achievements_dict[ach_word]["title_"]
+                    #text persistent.achievements_dict[ach_word]["text"]          
+
+screen extra_info():
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 1:
+            if achievement.has(ach_word):
+                vbox:
+                    xoffset 25
+                    label persistent.achievements_dict[ach_word]["title_"]
+                    text persistent.achievements_dict[ach_word]["text"]
+
+
+style ach_button is gui_button
+style ach_button_text is gui_button_text
+style ach_label is gui_label
+style ach_label_text is gui_label_text
+style ach_text is gui_text
+
+style ach_button:
+    properties gui.button_properties("ach_button")
+    xmargin 20
+
+style ach_button_text:
+    properties gui.button_text_properties("ach_button")
+
+style ach_label:
+    xmaximum 200
+    bottom_padding 20
+    top_padding 80
+    text_align 0.0
+
+style ach_text:
+    size gui.text_size
+    line_spacing 10
+    xmaximum 1200
+    text_align 0.0
+
 
 ## Epsiode Select 스크린 ###########################################################
 ##
@@ -1195,44 +1207,42 @@ screen episodes():
     
     tag menu
 
-    use navigation
+    use game_menu(_("시작하기"), scroll="viewport"):
 
-    grid 1 4:
-        xalign 0.5
-        yalign 0.5
+        grid 1 4:
+            xalign 0.5
+            yalign 0.5
 
-        #spacing 600
-        spacing 200
+            #spacing 600
+            spacing 200
 
-        textbutton "Ep.1: 던져진 운명":
-            text_style "mytextbutton"
-            if persistent.part1:
-                action Start("part1")
-            else:
-                action ShowMenu("unlocked")
+            textbutton "Ep.1: 던져진 운명":
+                text_style "mytextbutton"
+                if persistent.part1:
+                    action Start("part1")
+                else:
+                    action ShowMenu("unlocked")
                 
-        textbutton "Ep.2":
-            text_style "mytextbutton"
-            if persistent.part2:
-                action Start("part2")
-            else:
-                action ShowMenu("unlocked")
+            textbutton "Ep.2":
+                text_style "mytextbutton"
+                if persistent.part2:
+                    action Start("part2")
+                else:
+                    action ShowMenu("unlocked")
         
-        textbutton "Ep.3":
-            text_style "mytextbutton"
-            if persistent.part3:
-                action Start("part3")
-            else:
-                action ShowMenu("unlocked")
+            textbutton "Ep.3":
+                text_style "mytextbutton"
+                if persistent.part3:
+                    action Start("part3")
+                else:
+                    action ShowMenu("unlocked")
         
-        textbutton "Ep.4":
-            text_style "mytextbutton"
-            if persistent.part4:
-                action Start("part4")
-            else:
-                action ShowMenu("unlocked")
-
-    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
+            textbutton "Ep.4":
+                text_style "mytextbutton"
+                if persistent.part4:
+                    action Start("part4")
+                else:
+                    action ShowMenu("unlocked")
 
 screen unlocked():
     add "bg_black.png"
@@ -1246,60 +1256,35 @@ screen unlocked():
 ##
 ## 이 스크린은 엔딩 목록 확인에 쓰입니다.
 ##
-style mytextbutton:
-    idle_color "#888888"
-    hover_color "#ffffff"
-
-style mytext:
-    first_indent 10
-    line_leading 20
-    line_spacing 20
 
 init python:
     profile_items = {"엔딩 1: 너무나 많이 무엄한 죄" : persistent.ending_1,
     "엔딩 2: 거짓말이야" : persistent.ending_2,
-    "엔딩 3: 캐붕" : persistent.ending_3,
-    "엔딩 4: 패륜아" : persistent.ending_4,
-    "엔딩 5: 효자 정훈" : persistent.ending_5}
-
-    prf_rows = 1
-    prf_cols = 3
-    prf_cells = prf_rows * prf_cols    
-    prf_page = 0
-
+    "엔딩 3: 아첨은 그만" : persistent.ending_3,
+    "엔딩 4: 효자 정훈" : persistent.ending_4}
 
 screen endings():
     
     tag menu
 
-    use navigation
+    use game_menu(_("엔딩목록"), scroll="viewport"):
 
-    add "bg_skyblue.png"
+        style_prefix "ending"
 
-    grid prf_rows prf_cols:
-        ypos 10
-        $ i = 0
-        $ next_prf_page = prf_page + 1     
-
-        if next_prf_page > int(len(profile_items)/prf_cells):
-            $ next_prf_page = 0
         for prf_item in profile_items:
-            $ i += 1
-            if i <= (prf_page+1)*prf_cells and i>prf_page*prf_cells:
-                if profile_items[prf_item]:
-                    textbutton prf_item text_style "mytext"
-                else:
-                    textbutton "엔딩 ?: ??" text_style "mytext"
-        for j in range(i, (prf_page+1)*prf_cells):
-            null
-    
-    frame:
-        xalign 0.5 yalign 0.97
-        vbox:
-            if len(profile_items)> prf_cells:
-                textbutton _("다음") text_style "mytextbutton" action [SetVariable('prf_page', next_prf_page), ShowMenu("endings")]
 
-    textbutton "돌아가기" action Return() xalign 0.97 yalign 0.97
+            if profile_items[prf_item]:
+                text prf_item
+            else:
+                text "엔딩 ?: ??"
+
+style ending_text is gui_text
+    
+style ending_text:
+    size gui.label_text_size
+    first_indent 10
+    line_leading 20
+    line_spacing 20
 
 
 
