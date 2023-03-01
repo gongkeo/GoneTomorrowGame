@@ -47,11 +47,6 @@ init python:
     pass
 
 #지속데이터 정의
-default persistent.ending_1 = False
-default persistent.ending_2 = False
-default persistent.ending_3 = False
-default persistent.ending_4 = False
-
 default persistent.part1 = True
 default persistent.part2 = False
 default persistent.part3 = False
@@ -393,7 +388,7 @@ label part2:
             jh "안돼!!!"
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
-            $ persistent.ending_1 = True
+            $ achievement.grant("ending1")
             show black with fade
             call polite
         "급하게 고개를 숙였다.":
@@ -437,7 +432,7 @@ label part2:
             jh "전하아!!!"
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
-            $ persistent.ending_2 = True
+            $ achievement.grant("ending2")
             show black with fade
             call honor
         "솔직하게 모른다고 대답했다.":
@@ -478,8 +473,7 @@ label part2:
             top "전하, 이놈 말하는 본새가 간신과 다르지 않습니다. 당장 {color=#FF8C00}매질{/color}을 하겠습니다!"
             centered "{color=#FF8C00}엔딩 3{/color}. 아첨은 그만"
             centered "김옥균을 어여삐 한 사람의 말을 잘 들어보자."
-            $ achievement.grant("ending_")
-            $ persistent.ending_3 = True
+            $ achievement.grant("ending3")
             show black with fade
             call jjan
 
@@ -1030,7 +1024,7 @@ label polite:
             jh "안돼!!!"
             centered "{color=#FF8C00}엔딩 1{/color}. 너무나 많이 무엄한 죄"
             centered "새로운 선택지를 골라보자."
-            $ persistent.ending_1 = True
+            $ achievement.grant("ending1")
             show black with fade
             jump polite
         "급하게 고개를 숙였다.":
@@ -1059,7 +1053,7 @@ label honor:
             jh "전하아!!!"
             centered "{color=#FF8C00}엔딩 2{/color}. 거짓말이야"
             centered "새로운 선택지를 골라보자."
-            $ persistent.ending_2 = True
+            $ achievement.grant("ending2")
             show black with fade
 
         "솔직하게 모른다고 대답했다.":
@@ -1081,7 +1075,7 @@ label jjan:
             emp "겠냐고."
             top "전하, 이놈 말하는 본새가 간신과 다르지 않습니다. 당장 {color=#FF8C00}매질{/color}을 하겠습니다!"
             centered "{color=#FF8C00}엔딩 3{/color}. 아첨은 그만"
-            $ persistent.ending_3 = True
+            $ achievement.grant("ending3")
             show black with fade
             jump jjan
 
@@ -1102,7 +1096,7 @@ label dutiful:
     "정훈은 약을 지어서 바로 집에 돌아왔다."
     "아버지는 일찍 잠에 드신 듯했다."
     "오늘도 평소와 다를 것 없는 하루였다고 정훈은 생각했다."
-    $ persistent.ending_4 = True
+    $ achievement.grant("ending4")
     centered "{color=#FF8C00}엔딩 4{/color}. 효자 정훈"
     centered "일탈해보자."
     show black with fade
