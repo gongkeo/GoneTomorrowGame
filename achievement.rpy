@@ -256,7 +256,12 @@ init python:
                                                             "icon": "images/icons/ach.png"
                                                             }            
                                         }
-                                        
+
+    persistent.profile_items = { "ending1" : "엔딩 1: 너무나 많이 무엄한 죄",
+    "ending2" : "엔딩 2: 거짓말이야",
+    "ending3" : "엔딩 3: 아첨은 그만",
+    "ending4" : "엔딩 4: 효자 정훈"
+    }                                    
 
     for i, a in persistent.achievements_dict.items():
         if a['type'] == 0:
