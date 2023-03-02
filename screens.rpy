@@ -1121,6 +1121,33 @@ style mytextbutton:
     idle_color "#888888"
     hover_color "#ffffff"
 
+init python:
+
+    info_person_count = 0
+    info_person_total = 0
+
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 0:
+            info_person_total += 1
+        if achievement.has(ach_word):
+            if persistent.achievements_dict[ach_word]["category"] == 0:
+                info_person_count += 1
+    
+    info_person_achs = str(info_person_count) + "/" + str(info_person_total)
+
+    info_extra_count = 0
+    info_extra_total = 0
+
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 1:
+            info_extra_total += 1
+        if achievement.has(ach_word):
+            if persistent.achievements_dict[ach_word]["category"] == 1:
+                info_extra_count += 1
+    
+    info_extra_achs = str(info_extra_count) + "/" + str(info_extra_total)
+
+
 screen achievements():
     tag menu
 
@@ -1145,6 +1172,10 @@ screen achievements():
 
 
 screen person_info():
+    text info_person_achs:
+        size 30
+        xalign 1.0
+
     for ach_word in persistent.achievements_dict:
         if persistent.achievements_dict[ach_word]["category"] == 0:
             if achievement.has(ach_word):
@@ -1152,13 +1183,13 @@ screen person_info():
                     xoffset 25
                     label persistent.achievements_dict[ach_word]["title_"]
                     text persistent.achievements_dict[ach_word]["text"]
-            #else:
-                #vbox:
-                    #xoffset 25
-                    #label persistent.achievements_dict[ach_word]["title_"]
-                    #text persistent.achievements_dict[ach_word]["text"]          
+    text ""         
 
 screen extra_info():
+    text info_extra_achs:
+        size 30
+        xalign 1.0
+
     for ach_word in persistent.achievements_dict:
         if persistent.achievements_dict[ach_word]["category"] == 1:
             if achievement.has(ach_word):
@@ -1166,7 +1197,8 @@ screen extra_info():
                     xoffset 25
                     label persistent.achievements_dict[ach_word]["title_"]
                     text persistent.achievements_dict[ach_word]["text"]
-
+    
+    text ""
 
 style ach_button is gui_button
 style ach_button_text is gui_button_text
@@ -1257,6 +1289,17 @@ screen unlocked():
 ## 이 스크린은 엔딩 목록 확인에 쓰입니다.
 ##
 
+init python:
+    ending_count = 0
+    ending_total = len(persistent.profile_items)
+
+    for prf_item in persistent.profile_items:
+
+        if achievement.has(prf_item):
+            ending_count += 1
+    
+    ending_achs = str(ending_count) + "/" + str(ending_total)
+
 screen endings():
     
     tag menu
@@ -1264,13 +1307,23 @@ screen endings():
     use game_menu(_("엔딩목록"), scroll="viewport"):
 
         style_prefix "ending"
+        
+        vbox:
+            xsize 1200
 
-        for prf_item in persistent.profile_items:
+            spacing 50
 
-            if achievement.has(prf_item):
-                text persistent.profile_items[prf_item]
-            else:
-                text "엔딩 ?: ??"
+            text ending_achs:
+                size 30
+                xalign 1.0
+
+            vbox:
+                for prf_item in persistent.profile_items:
+
+                    if achievement.has(prf_item):
+                        text persistent.profile_items[prf_item]
+                    else:
+                        text "엔딩 ?: ??"
 
 style ending_text is gui_text
     
