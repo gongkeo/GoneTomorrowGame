@@ -38,6 +38,13 @@ define hjm = Character('하지메', color="#FFD9FA", who_outlines=[(0.3, "#00000
 #색 설정
 define highlight = "#FF8C00"
 
+#자간 설정
+init -2:
+    style nvl_dialogue:
+        line_spacing 10
+    style say_dialogue:
+        line_spacing 10 
+
 #변수
 default _choice = -1
 default kog_like = 0
