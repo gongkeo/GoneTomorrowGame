@@ -1,8 +1,21 @@
+# 이미지 정의
+image tatami = "bg_tatami.jpg"
+
+#메인 캐릭터
+define mats = Character('마츠다', color="#FF7171", who_outlines=[(0.3, "#000000")])
+
+#엑스트라
+
+
+label episode2:
+    jump part9
+    return
+
 label part9:
+    $ renpy.pause(2.4)
     scene black with fade
     mats "다행히 상처가 깊진 않군요."
 
-    scene tatami with fade
     "마츠다는 붕대를 마저 감아주고는 안경을 올렸다."
     mats "염증으로만 덧나지 않게 잘 살피십시오."
     jh "…고맙습니다."
@@ -18,7 +31,7 @@ label part9:
     show black with fade
     jy "하마터면 큰일을 치를 뻔했네."
 
-    hide black with fade
+    scene tatami with fade
     "옥균은 말없이 책상을 손끝으로 두드리기만 했다."
     "종윤이 옥균의 안색을 살폈으나, 어떠한 기미도 발견할 수 없었다."
 
@@ -76,9 +89,11 @@ label part9:
     "이제는 찰나의 기울어짐도 {color=#FF8C00}추락{/color}이 될 터였다."
     "옥균은 서찰을 열어 빠르게 읽기 시작했다."
 
+    show black with fade
     centered "김옥균은 보라."
     centered "군과 더불어 어깨를 잡고 의논하여\n동양의 백년대계를 정하고자 한다."
     centered "청국으로 나를 만나러 오라."
+    hide black
 
     jh "…현재 청과 일본은 조선을 사이에 두고 세력을 과시하고 있습니다."
     jh "최근 이완이 일본과 결탁하여 조선의 정세를 어지럽히니,"
