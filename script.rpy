@@ -52,6 +52,11 @@ default persistent.part2 = False
 default persistent.part3 = False
 default persistent.part4 = False
 
+default persistent.ep1 = True
+default persistent.ep2 = False
+default persistent.ep3 = False
+default persistent.ep4 = False
+
 label start:
     return
 
@@ -62,7 +67,7 @@ label part1:
     show text "끝은 새로운 시작이니, 누군가는 그 길을 가야 한다." with dissolve
     pause 2
     hide text with dissolve
-    
+
     #Intro
     #장전음
     play sound "audio/Handling.mp3" 
@@ -99,9 +104,9 @@ label part1:
 
     "정훈은 망설이다가 입을 열었다."
 
-    jh "…Désir."
+    jh "…Desir."
     kog "{color=#FF8C00}혁명{/color}은, 무엇인가."
-    jh "Révolution."
+    jh "Revolution."
     kog "그럼… {color=#FF8C00}동지{/color}는 무엇인가."
 
     "이건 {color=#FF8C00}시험{/color}이다."
@@ -1002,8 +1007,9 @@ label part8:
     kog "…이 목숨을 거두러 왔거나."
     #To Be Continued.
     #에피소드 2가 열렸습니다 팝업
-
+    $ get_epsiode("에피소드 2가 열렸습니다.")
     return
+
 
 #엔딩 1: 예의바르게 굴자
 label polite:
