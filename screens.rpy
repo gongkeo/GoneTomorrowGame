@@ -1117,10 +1117,6 @@ style help_label_text:
 ## 수집 정보를 출력합니다.
 ##
 
-style mytextbutton:
-    idle_color "#888888"
-    hover_color "#ffffff"
-
 init python:
 
     info_person_count = 0
