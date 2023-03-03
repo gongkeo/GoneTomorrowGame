@@ -1,4 +1,4 @@
-label script2:
+label ep1_script2:
     jump part5
     return
 
@@ -367,6 +367,6 @@ label part8:
     $ persistent.ep2 = True
     $ get_epsiode("에피소드 2가 열렸습니다.")
 
-    jump episode2
+    jump ep2_script1
 
     return
