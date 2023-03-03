@@ -1,4 +1,4 @@
-label script1:
+label ep1_script1:
     jump part2
     return
 
