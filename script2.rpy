@@ -1,7 +1,7 @@
 label script2:
     jump part5
     return
-    
+
 #Part 3-2
 label part5:
     scene black with fade
@@ -355,11 +355,23 @@ label part8:
 
     jy "옥균이!"
     kog "……."
+
+    show black
     centered "둘 중 하나겠지."
     centered "이 사람을 진정으로 존경하거나, 혹은…."
-    
+
     kog "…이 목숨을 거두러 왔거나."
+
     #To Be Continued.
     #에피소드 2가 열렸습니다 팝업
     $ get_epsiode("에피소드 2가 열렸습니다.")
+
+    ""
+
+    call screen episodes
+
+    ""
+
+    hide black
+
     return
