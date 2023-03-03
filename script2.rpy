@@ -364,14 +364,9 @@ label part8:
 
     #To Be Continued.
     #에피소드 2가 열렸습니다 팝업
+    $ persistent.ep2 = True
     $ get_epsiode("에피소드 2가 열렸습니다.")
 
-    ""
-
-    call screen episodes
-
-    ""
-
-    hide black
+    jump episode2
 
     return
