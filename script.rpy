@@ -305,5 +305,5 @@ label part1:
     "정훈은 들릴 듯 말 듯 독백했다."
 
     scene black with fade
-    jump script1
+    jump ep1_script1
     return
