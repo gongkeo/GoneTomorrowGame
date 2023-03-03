@@ -350,7 +350,7 @@ label part4:
             "잠깐 마주친 것이지만 알 수 있었다."
             "정훈은 오늘 일을 그 누구에게도 말하지 않기로 결심했다."
 
-    jump script2
+    jump ep1_script2
     
     return
 
