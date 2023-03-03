@@ -7,7 +7,7 @@ transform popup_transform:
         linear 0.4 xalign 1.9 yalign .02
 
 screen scr_episode_get(title, trans=popup_transform):
-    timer 1.0 action Hide("scr_episode_get")
+    timer 2.4 action Hide("scr_episode_get")
     window:
         at trans
         background "#333333cc"
