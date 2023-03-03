@@ -7,7 +7,7 @@ define mats = Character('마츠다', color="#FF7171", who_outlines=[(0.3, "#0000
 #엑스트라
 
 
-label episode2:
+label ep2_script1:
     jump part9
     return
 
