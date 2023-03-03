@@ -1227,10 +1227,6 @@ style ach_text:
 ## 이 스크린은 챕터 선택에 쓰입니다.
 ##
 
-style mytextbutton:
-    idle_color "#888888"
-    hover_color "#ffffff"
-
 screen episodes():
     
     tag menu
@@ -1245,28 +1241,24 @@ screen episodes():
             spacing 200
 
             textbutton "Ep.1: 던져진 운명":
-                text_style "mytextbutton"
                 if persistent.part1:
                     action Start("part1")
                 else:
                     action ShowMenu("unlocked")
                 
-            textbutton "Ep.2":
-                text_style "mytextbutton"
+            textbutton "Ep.2 대국":
                 if persistent.part2:
                     action Start("part2")
                 else:
                     action ShowMenu("unlocked")
         
             textbutton "Ep.3":
-                text_style "mytextbutton"
                 if persistent.part3:
                     action Start("part3")
                 else:
                     action ShowMenu("unlocked")
         
             textbutton "Ep.4":
-                text_style "mytextbutton"
                 if persistent.part4:
                     action Start("part4")
                 else:
