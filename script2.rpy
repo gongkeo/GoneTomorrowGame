@@ -1,3 +1,7 @@
+label script2:
+    jump part5
+    return
+    
 #Part 3-2
 label part5:
     scene black with fade
