@@ -17,8 +17,10 @@ label part5:
     "이희는 정훈을 흘긋 바라보더니 입을 열지 않았다."
     "그는 엄 상궁을 향해 가볍게 눈짓할 뿐이었다."
     
+    if not achievement.has("hongjongwoo"):
+        $ get_achievement("hongjongwoo", trans=achievement_transform)
+
     umm "{color=#FF8C00}홍종우{/color}는 글을 쓰는 문인, 사람을 죽일 그릇이 못 되네."
-    $ get_achievement("hongjongwoo", trans=achievement_transform)
     umm "명분은 홍종우가, {color=#FF8C00}몸뚱아리{/color}는 자네가 빌려주게."
     jh "……."
     emp "…김옥균을 죽이면, 네가 원하는 모든 것을 들어주겠다."
@@ -40,8 +42,9 @@ label part5:
     centered "무엇을 위해 조선에 돌아왔나."
     centered "감히 비상하리란 꿈을 가졌나."
     centered "인생이란, 얼어붙은 진창에 처박히는 것일 뿐인데."
+    if not achievement.has("destiny"):
+        $ get_achievement("destiny", trans=achievement_transform)
     "어차피 {color=#FF8C00}던져진 운명{/color}이다."
-    $ get_achievement("destiny", trans=achievement_transform)
     "정훈은 주먹을 세게 쥐고 한성을 빠져나갔다."
 
     #scene night sea
@@ -71,7 +74,7 @@ label part5:
     jy "자네를 본토로 부르면 당연히 {color=#FF8C00}개화파{/color}들이 집결할 텐데…."
     kog "…그렇겠지."
     jy "그걸 모르고 있진 않을 테고."
-    kog "우리가 모인다 한들 그 힘이 이완만큼 크지 않다는 걸 일본 정부가 모르겠나. …분명 다른 뜻이 있겠지."
+    kog "우리가 모인다 한들 그 힘이 이완만큼 크지 않다는 걸 일본 정부가 모르겠나.\n…분명 다른 뜻이 있겠지."
 
     "혹은, {color=#FF8C00}이완{/color}의 뜻일 수도 있고."
     "옥균은 뒷말까지 입 밖으로 꺼내진 않았다."
@@ -112,16 +115,18 @@ label part6:
     scene harbor with fade
     "정훈은 헐떡이며 겨우 몸을 일으켰다."
     "…또 {color=#FF8C00}그 꿈{/color}이다."
+    if not achievement.has("nightmare"):
+        $ get_achievement("nightmare", trans=achievement_transform)
     "파견을 갔다 오면 으레 꾸던 꿈."
-    $ get_achievement("nightmare", trans=achievement_transform)
     "한동안 멀어졌다고 생각했는데, 조선을 떠나면서부터 하루도 거르지 않고 찾아왔다."
     "정훈은 손바닥으로 얼굴을 감싸고 숨을 몰아쉬었다."
     jh "……."
     "괴로운 이유는 숨을 쉴 수 없어서가 아니었다."
     "여전히 숨을 쉬고 있기에 괴롭다."
     "정훈은 떨리는 손을 뻗어 가방을 뒤적였다."
+    if not achievement.has("cigarette"):
+        $ get_achievement("cigarette", trans=achievement_transform)
     "{color=#FF8C00}궐련{/color} 한 개비를 입에 물고 라이터를 열었다."
-    $ get_achievement("cigarette", trans=achievement_transform)
     "딸깍이는 소리와 함께 불이 붙는다."
     "생각이 연기처럼 어지럽게 뒤엉켰다."
     "상념이 사라지길 바라진 않았다."
@@ -148,8 +153,9 @@ label part6:
     "내 이름은 잊어야 한다."
     "정훈은 제 처지가 참 우습다고 생각했다."
     "이름을 잊고 산 지 오래인데, 막상 다른 사람이 되라 하니 그럴 수 없음을 뼈저리게 깨닫는다."
+    if not achievement.has("name"):
+        $ get_achievement("name", trans=achievement_transform)
     "내가 버린 이름까지 {color=#FF8C00}낙인{/color}이 되어 나를 따라다닌다."
-    $ get_achievement("name", trans=achievement_transform)
     "내가 버린 나라까지 무게가 되어 나를 짓누른다."
 
     jh "홍종우…."
@@ -166,7 +172,7 @@ label part7:
     "웃고 떠드는 사람이 거리를 메우고 있었다."
     "옥균은 만면 가득 여유로운 웃음을 띠고 완보로 걸었다."
 
-    kog "오랜만에 이렇게 사람 많은 곳에 나오니 사람 사는 것 같고 좋구만. 그런데 어쩌지. 이 많은 사람 중에 누가 내 목에 칼을 들이대면."
+    kog "오랜만에 이렇게 사람 많은 곳에 나오니 사람 사는 것 같고 좋구만. 그런데 어쩌지.\n이 많은 사람 중에 누가 내 목에 칼을 들이대면."
 
     "농담이 분명한 말에도 종윤은 차마 웃지 못하고 미간을 좁혔다."
 
@@ -192,15 +198,17 @@ label part7:
             jy "내일일세."
             kog "홍종우라고 했지."
             jy "그래. 불란서에서 외무장관과 독대까지 했던 인사라고 하네."
+            if not achievement.has("leehongjang"):
+                $ get_achievement("leehongjang", trans=achievement_transform)
             kog "…{color=#FF8C00}이홍장{/color}에게 들렀다 오는 길이면 여독이 이만저만 아니겠군."
-            $ get_achievement("leehongjang", trans=achievement_transform)
             "나직이 흐르는 옥균의 음성이 의미심장했다."
         "조선에 있을 그분에 관하여":
             kog "혹시 조선에서 들어온 소식은 없나."
             jy "…전하의 안위가 궁금한가."
             kog "그리 들렸다면 하는 수 없지."
+            if not achievement.has("donghak"):
+                $ get_achievement("donghak", trans=achievement_transform)
             jy "근래 전주에서 일이 터진 모양이더군. 농민들이 {color=#FF8C00}봉기{/color}를 일으켰다고."
-            $ get_achievement("donghak", trans=achievement_transform)
             kog "……."
             jy "무슨 생각을 하나."
             kog "글쎄. …내가 조선에 있었다면 어떤 쪽에 힘이 되었을까 생각해 보았네."
@@ -215,7 +223,7 @@ label part7:
     "하늘이 맑다."
     "정훈은 기차역에서 나와 거리로 나섰다."
     "그의 손에는 작은 쪽지가 들려있다."
-    "'Hotel 新星 321號'"
+    "'Hotel {font=KoPubWorld Batang Bold.ttf}新星{/font} 321{font=KoPubWorld Batang Bold.ttf}號{/font}'"
     "빠른 걸음으로 거리를 가로질러 호텔로 향했다."
 
     #scene hotel
@@ -258,8 +266,9 @@ label part7:
 
             hsg2 "그리 딱딱하게 굴 거 없소. 어차피 같은 처지 아니오?"
             jh "……."
+            if not achievement.has("hongseunggyoo"):
+                $ get_achievement("hongseunggyoo", trans=achievement_transform)
             hsg2 "뭐, 상황이 상황이라 통성명은 못 하지만, 홍승규라 부르시오."
-            $ get_achievement("hongseunggyoo", trans=achievement_transform)
             jh "홍승규…."
             hsg1 "누가 물으면 그대 홍종우와는 친척 사이인 거요."
 
@@ -321,16 +330,18 @@ label part8:
 
     "그때, 옥균을 찾은 하지메가 언덕 위에서 환하게 웃어 보였다."
     "그는 빠르게 달려와 뒤에 선 사내를 소개했다."
+    if not achievement.has("leeyiljik"):
+        $ get_achievement("leeyiljik", trans=achievement_transform)
     hjm "선생님, {color=#FF8C00}이일신 선생{/color}께서 소개하라고 하신 분을 모시고 왔습니다."
-    $ get_achievement("leeyiljik", trans=achievement_transform)
     "와다는 사내의 앞을 가로막고 양손을 들어 올릴 것을 청했다."
     "그러자 사내는 말 없이 수긍하며 순순히 몸수색에 응했다."
     jh "…홍종우라고 합니다. 이렇게 만나 뵙게 되어, 영광입니다."
     "옥균은 자신을 ‘홍종우’라 소개한 {color=#FF8C00}홍안의 사내{/color}를 꿰뚫을 듯 바라보았다."
     "저를 향해 뻗은 다부진 손을 흘끔거렸다."
     "그는 곧 여유가 흐르는 웃음을 지었다."
+    if not achievement.has("silly"):
+        $ get_achievement("silly", trans=achievement_transform)
     kog "자네 {color=#FF8C00}20엔{/color} 있나?"
-    $ get_achievement("silly", trans=achievement_transform)
     "당혹스러움을 감추지 못한 {color=#FF8C00}눈빛{/color}이 흔들린다."
     "옥균은 저 눈을 잘 알았다."
     "긴장한 태가 나는 것으로 보아 둘 중 하나겠지."
