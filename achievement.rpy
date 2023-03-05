@@ -61,6 +61,7 @@ screen scr_achievement_update(title, a_text, icon, cur_prog, max_prog, trans=ach
 
 
 init python:
+
     def get_achievement(ach_id, trans=achievement_transform):
         ach = persistent.achievements_dict[ach_id]
         achievement.grant(ach_id)
@@ -84,19 +85,7 @@ init python:
 
 
     # Define your achievements here
-    persistent.achievements_dict = {#"test1": {"type": 0, # One time achievement
-                                                            #"title": "Yay!", # Also name for steam
-                                                            #"text": "Wow you've achieved!", # description
-                                                            #"icon": "images/icons/ach.png" # 96x96 image
-                                                            #},
-                                        #"test2": {"type": 1, # Progress achievement
-                                                            #"title": "Progress!",
-                                                            #"text": "Making progress...",
-                                                            #"icon": "images/icons/ach.png",
-                                                            #"cur_prog": 0, # current progress 
-                                                            #"max_prog": 3# maximal progress
-                                                            #},
-                                        "leewan": {"type": 0,
+    persistent.achievements_dict = {    "leewan": {"type": 0,
                                                             "category": 0,
                                                             "title": "인물정보 '총리대신'",
                                                             "title_": "총리대신",
@@ -215,6 +204,12 @@ init python:
                                                             "title": "인물정보 '헛소리'",
                                                             "title_": "헛소리",
                                                             "text": "김옥균은 과거 유락정에서 돈을 수없이 날려 친구인 종윤의 속을 썩인 바 있다. 이제는 처음 본 사람에게도 20엔을 요구하기까지 한다. 하지만 그의 큰 그림은…."
+                                                            },
+                                        "genius": {"type": 0,
+                                                            "category": 0,
+                                                            "title": "인물정보 '수재'",
+                                                            "title_": "수재",
+                                                            "text": "월수소조천하. 김옥균이 6세에 지은 시다."
                                                             },
                                         "": {"type": 0,
                                                             "category": 0,
