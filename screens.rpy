@@ -1118,30 +1118,34 @@ style help_label_text:
 ##
 
 init python:
+    try:
+        info_person_count = 0
+        info_person_total = 0
 
-    info_person_count = 0
-    info_person_total = 0
+        info_extra_count = 0
+        info_extra_total = 0
 
-    for ach_word in persistent.achievements_dict:
-        if persistent.achievements_dict[ach_word]["category"] == 0:
-            info_person_total += 1
-        if achievement.has(ach_word):
+        for ach_word in persistent.achievements_dict:
             if persistent.achievements_dict[ach_word]["category"] == 0:
-                info_person_count += 1
+                info_person_total += 1
+            if achievement.has(ach_word):
+                if persistent.achievements_dict[ach_word]["category"] == 0:
+                    info_person_count += 1
     
-    info_person_achs = str(info_person_count) + "/" + str(info_person_total)
+        info_person_achs = str(info_person_count) + "/" + str(info_person_total)
 
-    info_extra_count = 0
-    info_extra_total = 0
-
-    for ach_word in persistent.achievements_dict:
-        if persistent.achievements_dict[ach_word]["category"] == 1:
-            info_extra_total += 1
-        if achievement.has(ach_word):
+        for ach_word in persistent.achievements_dict:
             if persistent.achievements_dict[ach_word]["category"] == 1:
-                info_extra_count += 1
+                info_extra_total += 1
+            if achievement.has(ach_word):
+                if persistent.achievements_dict[ach_word]["category"] == 1:
+                    info_extra_count += 1
     
-    info_extra_achs = str(info_extra_count) + "/" + str(info_extra_total)
+        info_extra_achs = str(info_extra_count) + "/" + str(info_extra_total)
+    except:
+        info_person_achs = ""
+        info_extra_achs = ""
+
 
 
 screen achievements():
@@ -1168,9 +1172,23 @@ screen achievements():
 
 
 screen person_info():
-    text info_person_achs:
-        size 30
-        xalign 1.0
+    $ info_person_count = 0
+    $ info_person_total = 0
+
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 0:
+            $ info_person_total += 1
+        if achievement.has(ach_word):
+            if persistent.achievements_dict[ach_word]["category"] == 0:
+                $ info_person_count += 1
+    
+    $ info_person_achs = str(info_person_count) + "/" + str(info_person_total)
+
+    vbox:
+        xsize 1200
+        text info_person_achs:
+            size 30
+            xalign 1.0
 
     for ach_word in persistent.achievements_dict:
         if persistent.achievements_dict[ach_word]["category"] == 0:
@@ -1179,13 +1197,28 @@ screen person_info():
                     xoffset 25
                     label persistent.achievements_dict[ach_word]["title_"]
                     text persistent.achievements_dict[ach_word]["text"]
-    text ""         
+    text ""
+        
 
 screen extra_info():
-    text info_extra_achs:
-        size 30
-        xalign 1.0
+    $ info_extra_count = 0
+    $ info_extra_total = 0
 
+    for ach_word in persistent.achievements_dict:
+        if persistent.achievements_dict[ach_word]["category"] == 1:
+            $ info_extra_total += 1
+        if achievement.has(ach_word):
+            if persistent.achievements_dict[ach_word]["category"] == 1:
+                $ info_extra_count += 1
+    
+    $ info_extra_achs = str(info_extra_count) + "/" + str(info_extra_total)
+
+    vbox:
+        xsize 1200
+        text info_extra_achs:
+            size 30
+            xalign 1.0
+    
     for ach_word in persistent.achievements_dict:
         if persistent.achievements_dict[ach_word]["category"] == 1:
             if achievement.has(ach_word):
@@ -1193,7 +1226,6 @@ screen extra_info():
                     xoffset 25
                     label persistent.achievements_dict[ach_word]["title_"]
                     text persistent.achievements_dict[ach_word]["text"]
-    
     text ""
 
 style ach_button is gui_button
@@ -1210,7 +1242,7 @@ style ach_button_text:
     properties gui.button_text_properties("ach_button")
 
 style ach_label:
-    xmaximum 200
+    xmaximum 500
     bottom_padding 20
     top_padding 80
     text_align 0.0
@@ -1247,20 +1279,20 @@ screen episodes():
                     action ShowMenu("unlocked")
                 
             textbutton "Ep.2 대국":
-                if persistent.part2:
-                    action Start("part2")
+                if persistent.ep2:
+                    action Start("episode2")
                 else:
                     action ShowMenu("unlocked")
         
             textbutton "Ep.3":
-                if persistent.part3:
-                    action Start("part3")
+                if persistent.ep3:
+                    action Start("episode3")
                 else:
                     action ShowMenu("unlocked")
         
             textbutton "Ep.4":
-                if persistent.part4:
-                    action Start("part4")
+                if persistent.ep4:
+                    action Start("episode4")
                 else:
                     action ShowMenu("unlocked")
 
@@ -1269,7 +1301,7 @@ screen unlocked():
     textbutton "아직 스토리를 진행하지 않았습니다.":
         xalign 0.5
         yalign 0.5
-        action Hide("unlocked")
+        action Hide("unlocked"), ShowMenu("episodes")
 
 
 ## Endings 스크린 ###########################################################
@@ -1278,15 +1310,18 @@ screen unlocked():
 ##
 
 init python:
-    ending_count = 0
-    ending_total = len(persistent.profile_items)
+    try:
+        ending_count = 0
+        ending_total = len(persistent.profile_items)
 
-    for prf_item in persistent.profile_items:
+        for prf_item in persistent.profile_items:
 
-        if achievement.has(prf_item):
-            ending_count += 1
+            if achievement.has(prf_item):
+                ending_count += 1
     
-    ending_achs = str(ending_count) + "/" + str(ending_total)
+        ending_achs = str(ending_count) + "/" + str(ending_total)
+    except:
+        ending_achs = ""
 
 screen endings():
     
