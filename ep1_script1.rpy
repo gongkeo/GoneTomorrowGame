@@ -12,8 +12,9 @@ label part2:
 
     "이희는 붙박이듯 앉아 눈을 내리깔고 있었다."
     
+    if not achievement.has("coffee"):
+        $ get_achievement("coffee", trans=achievement_transform)
     umm "{color=#FF8C00}가비{/color}라도 들일까요."
-    $ get_achievement("coffee", trans=achievement_transform)
     emp "되었다."
     emp "…입이 쓰구나."
 
@@ -39,7 +40,8 @@ label part2:
     "이 빛이 그곳에도 가 닿길."
     show black
     centered "그대도 반드시 아프길." with fade
-    $ get_achievement("lovehate", trans=achievement_transform)
+    if not achievement.has("lovehate"):
+        $ get_achievement("lovehate", trans=achievement_transform)
     hide black
 
     #scene palaceis
@@ -50,8 +52,9 @@ label part2:
     "상궁은 별다른 대꾸 없이 고개만 주억이고 사라졌다."
     "늙수그레한 환관 한 명이 문턱을 넘어 앞으로 다가왔다."
     
+    if not achievement.has("sangseon"):
+        $ get_achievement("sangseon", trans=achievement_transform)
     top "{color=#FF8C00}정훈{/color}?"
-    $ get_achievement("sangseon", trans=achievement_transform)
     jh "그렇습니다."
     top "금일 입궐은 다른 이들에게 함구해야 할 것이다."
     jh "…예."
@@ -71,9 +74,11 @@ label part2:
     "여인은 천천히 정훈을 돌아보더니 웃는 듯 마는 듯한 표정을 지었다."
 
     umm "따라오시게."
-    
+
+    if not achievement.has("pyeonjeon"):
+        $ get_achievement("pyeonjeon", trans=achievement_transform)
+
     "정훈은 천천히 {color=#FF8C00}편전{/color} 안으로 걸음을 옮겼다."
-    $ get_achievement("pyeonjeon", trans=achievement_transform)
 
     #scene palaceis
     umm "전하, 불란서에서 정훈이란 자가 들었습니다."
@@ -191,8 +196,9 @@ label part2:
         "제가 그걸 어찌….":
             emp "그래. 모를 수도 있지. 벌써 구 년 전 일이니 말이다."
             jh "……."
+            if not achievement.has("okgyoon"):
+                $ get_achievement("okgyoon", trans=achievement_transform)
             emp "김옥균을 아느냐."
-            $ get_achievement("okgyoon", trans=achievement_transform)
             jh "…알고 있습니다."
             jh "그러면 되었다."
 
@@ -227,9 +233,9 @@ label part3:
     $ persistent.part3 = True
     #회상인 걸 알 수 있는 효과음 넣기
     scene black with fade
-
+    if not achievement.has("gapshin"):
+        $ get_achievement("gapshin", trans=achievement_transform)
     "갑신년, 이제 막 {color=#FF8C00}입추{/color}가 지났다."
-    $ get_achievement("gapshin", trans=achievement_transform)
     "아직 모기 입은 비뚤어지지 않았지만, 아침저녁으로 바람이 선선하게 분다."
     "정훈은 {color=#FF8C00}물동이 세 개{/color}를 지고 종로를 걷고 있었다."
 
@@ -265,8 +271,9 @@ label part3:
             "응식은 곧 큰길 쪽을 가리켰다."
             eus "피맛길 따라가면 물 필요한 집 몇군데 더 있을 거다. 어서 털고 집에 들어가거라."
             hjh "예, 감사합니다."
+            if not achievement.has("pimatgil"):
+                $ get_achievement("pimatgil", trans=achievement_transform)
             "정훈은 피맛길을 따라가기로 했다."
-            $ get_achievement("pimatgil", trans=achievement_transform)
             jump pmg
 
         "받을 수 없다며 거절했다.":
@@ -279,7 +286,8 @@ label part3:
             "정훈은 더 거절하기 민망해 감사히 받았다."
             "정훈은 일 전을 호주머니에 마저 넣었다."
             eus "곧 해가 지겠구나. 오늘치 약은 지었니."
-            $ get_achievement("sick", trans=achievement_transform)
+            if not achievement.has("sick"):
+                $ get_achievement("sick", trans=achievement_transform)
             hjh "지어서 들어가야죠. 오늘도 감사했습니다."
             "응식은 웃으며 정훈의 머리를 쓰다듬어주었다."
             "정훈은 육조거리로 향하는 피맛길과 종각으로 향하는 시전 사이에서 고민했다."
@@ -310,8 +318,9 @@ label part4:
 
     "아직 해가 완전히 지지 않았다."
     "정훈은 푸르게 빛나는 하늘 아래에 섰다."
+    if not achievement.has("yookjo"):
+        $ get_achievement("yookjo", trans=achievement_transform)
     "탁 트인 {color=#FF8C00}육조거리{/color}에는 마차와 가마가 오간다."
-    $ get_achievement("yookjo", trans=achievement_transform)
     "정훈은 처마 아래에 숨어서 지나다니는 사람을 지켜보았다."
     "거리는 생각보다 평화롭다."
     "세상이 뒤집힐 기미 같은 건 보이지 않았다."
@@ -404,6 +413,7 @@ label honor:
             centered "새로운 선택지를 골라보자."
             $ achievement.grant("ending2")
             show black with fade
+            jump honor
 
         "솔직하게 모른다고 대답했다.":
             jh "실은… 이름만, 들어보았습니다."
@@ -448,7 +458,6 @@ label dutiful:
     $ achievement.grant("ending4")
     centered "{color=#FF8C00}엔딩 4{/color}. 효자 정훈"
     centered "일탈해보자."
-    show black with fade
     jump part3
 
 #최종엔딩
