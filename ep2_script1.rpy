@@ -357,6 +357,8 @@ label part9:
     "작고 가는 필체로 쓰인 {color=#FF8C00}서찰{/color}을 바라보았다."
     centered "'때가 아니 되어도 은밀히 김옥균을 쳐라.'"
     "때가 아니 되어도. 이는 반드시 행하란 뜻이다."
+    if not achievement.has("hongseunggyoo"):
+        $ get_achievement("hongseunggyoo", trans=achievement_transform)
     "홍승규는 날카롭게 벼린 {color=#FF8C00}단도{/color}를 안주머니에 넣었다."
 
     return
