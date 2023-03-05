@@ -19,7 +19,7 @@ define emp = Character('이희', color="#F6F6F6", who_outlines=[(0.3, "#000000")
 define umm = Character('엄 상궁', color="#23A41A", who_outlines=[(0.3, "#000000")])
 define iw = Character('이완', color="#740000", who_outlines=[(0.3, "#292929")])
 define iy = Character('이연', color="#38610B", who_outlines=[(0.3, "#292929")])
-define soph = Character('Sophie', color="#143d8e", who_outlines=[(0.3, "#292929")])
+define soph = Character('소피', color="#143d8e", who_outlines=[(0.3, "#292929")])
 define wada = Character('와다', color="#9cf89f", who_outlines=[(0.3, "#000000")])
 define hsg1 = Character('홍승규', color="#FF7171", who_outlines=[(0.3, "#000000")])
 
@@ -112,9 +112,9 @@ label part1:
 
     "정훈은 망설이다가 입을 열었다."
 
-    jh "…Desir."
+    jh "…D{font=KoPubWorld Batang Bold.ttf}é{/font}sir."
     kog "{color=#FF8C00}혁명{/color}은, 무엇인가."
-    jh "Revolution."
+    jh "R{font=KoPubWorld Batang Bold.ttf}é{/font}olution."
     kog "그럼… {color=#FF8C00}동지{/color}는 무엇인가."
 
     "이건 {color=#FF8C00}시험{/color}이다."
@@ -197,8 +197,9 @@ label part1:
                     "나이 든 남자가 그를 말렸다."
                     iw "패기가 마음에 드는군."
                     jh "……."
+                    if not achievement.has("leewan"):
+                        $ get_achievement("leewan", trans=achievement_transform)
                     iw "나는 조선의 총리대신, 이완일세."
-                    $ get_achievement("leewan", trans=achievement_transform)
                     "정훈은 마지못해 고개를 숙였다."
                     "이완은 비릿한 웃음을 띠고 말했다."
                     iw "또 보지."
