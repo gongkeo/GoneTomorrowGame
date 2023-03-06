@@ -1278,7 +1278,7 @@ screen episodes():
                 else:
                     action ShowMenu("unlocked")
                 
-            textbutton "Ep.2 대국":
+            textbutton "Ep.2: 대국":
                 if persistent.ep2:
                     action Start("episode2")
                 else:
