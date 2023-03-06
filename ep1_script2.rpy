@@ -152,7 +152,7 @@ label part6:
     "…아니, 그게 사실일지도."
     "내 이름은 잊어야 한다."
     "정훈은 제 처지가 참 우습다고 생각했다."
-    "이름을 잊고 산 지 오래인데, 막상 다른 사람이 되라 하니 그럴 수 없음을 뼈저리게 깨닫는다."
+    "이름을 잊고 산 지 오래인데, 막상 다른 사람이 되라 하니\n그럴 수 없음을 뼈저리게 깨닫는다."
     if not achievement.has("name"):
         $ get_achievement("name", trans=achievement_transform)
     "내가 버린 이름까지 {color=#FF8C00}낙인{/color}이 되어 나를 따라다닌다."
