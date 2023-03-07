@@ -288,6 +288,7 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
+        ypos 750
         yalign 0.5
 
         spacing gui.navigation_spacing
@@ -300,7 +301,7 @@ screen navigation():
 
             textbutton _("수집정보") action ShowMenu("achievements")
 
-            textbutton _("버전정보") action ShowMenu("about")
+            #textbutton _("버전정보") action ShowMenu("about")
 
         else:
 
@@ -329,13 +330,15 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## 도움말 메뉴는 모바일 디바이스와 맞지 않아 불필요합니다.
-            textbutton _("조작방법") action ShowMenu("help")
+            #textbutton _("조작방법") action ShowMenu("help")
+            pass
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("종료하기") action Quit(confirm=not main_menu)
+            #textbutton _("종료하기") action Quit(confirm=not main_menu)
+            pass
 
 
 style navigation_button is gui_button
@@ -392,7 +395,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -429,7 +432,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.game_menu_background
 
     frame:
-        style "game_menu_outer_frame"
+
+        if main_menu:
+            style "main_menu_outer_frame"
+        else:
+            style "game_menu_outer_frame"
+
 
         hbox:
 
@@ -476,6 +484,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
 
     textbutton _("돌아가기"):
+        xalign 0.95
         style "return_button"
 
         action Return()
@@ -487,6 +496,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
 
 style game_menu_outer_frame is empty
+style main_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
 style game_menu_viewport is gui_viewport
@@ -504,6 +514,12 @@ style game_menu_outer_frame:
     top_padding 180
 
     background "gui/overlay/game_menu.png"
+    #background "gui/overlay/bg_black.png"
+
+style main_menu_outer_frame:
+    bottom_padding 45
+    top_padding 180
+    background "gui/overlay/bg_black.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1118,6 +1134,7 @@ style help_label_text:
 ##
 
 init python:
+
     try:
         info_person_count = 0
         info_person_total = 0
@@ -1142,6 +1159,7 @@ init python:
                     info_extra_count += 1
     
         info_extra_achs = str(info_extra_count) + "/" + str(info_extra_total)
+    
     except:
         info_person_achs = ""
         info_extra_achs = ""
@@ -1683,11 +1701,17 @@ style nvl_window:
 
 style main_menu_frame:
     variant "small"
-    background "gui/phone/overlay/main_menu.png"
+    #background "gui/phone/overlay/main_menu.png"
 
 style game_menu_outer_frame:
     variant "small"
+
     background "gui/phone/overlay/game_menu.png"
+
+style main_menu_outer_frame:
+    variant "small"
+
+    background "gui/phone/overlay/bg_black.png"
 
 style game_menu_navigation_frame:
     variant "small"
