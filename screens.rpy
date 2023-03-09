@@ -350,6 +350,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    idle_color '#FF3F49'
 
 
 ## Main Menu 스크린 ###############################################################
