@@ -27,8 +27,8 @@ define gui.accent_color = '#ffffff'
 
 ## 텍스트 버튼(text button)이 선택(selected)됐거나 커서를 올리지(hovered) 않았을
 ## 때 사용됩니다.
-#define gui.idle_color = '#888888'
-define gui.idle_color = '#FF3F49'
+define gui.idle_color = '#888888'
+#define gui.idle_color = '#FF3F49'
 
 ## 작은(small) 색상은 같은 효과를 내기 위해 더 밝거나 어두워야 하는 작은 글자에
 ## 사용됩니다.
