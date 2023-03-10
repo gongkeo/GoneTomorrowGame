@@ -112,9 +112,9 @@ label part1:
 
     "정훈은 망설이다가 입을 열었다."
 
-    jh "…D{font=KoPubWorld Batang Bold.ttf}é{/font}sir."
+    jh "…Désir."
     kog "{color=#FF8C00}혁명{/color}은, 무엇인가."
-    jh "R{font=KoPubWorld Batang Bold.ttf}é{/font}volution."
+    jh "Révolution."
     kog "그럼… {color=#FF8C00}동지{/color}는 무엇인가."
 
     "이건 {color=#FF8C00}시험{/color}이다."
