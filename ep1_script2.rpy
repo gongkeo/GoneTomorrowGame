@@ -223,7 +223,7 @@ label part7:
     "하늘이 맑다."
     "정훈은 기차역에서 나와 거리로 나섰다."
     "그의 손에는 작은 쪽지가 들려있다."
-    "'Hotel {font=KoPubWorld Batang Bold.ttf}新星{/font} 321{font=KoPubWorld Batang Bold.ttf}號{/font}'"
+    "'Hotel 新星 321號'"
     "빠른 걸음으로 거리를 가로질러 호텔로 향했다."
 
     #scene hotel
