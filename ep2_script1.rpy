@@ -297,7 +297,7 @@ label part9:
     jh "…아."
 
     "정훈은 손에 집히는 {color=#FF8C00}책 한 권{/color}을 꺼내었다."
-    "'Printemps parfum{font=KoPubWorld Batang Bold.ttf}é{/font}'"
+    "'Printemps parfumé'"
     "정훈은 저도 모르게 입꼬리를 올려 웃었다."
 
     #france
