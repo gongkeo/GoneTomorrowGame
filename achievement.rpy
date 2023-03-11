@@ -13,16 +13,17 @@ screen scr_achievement_get(title, a_text, icon, trans=achievement_transform):
         background "#333333cc"
         xalign .90
         yalign .02
-        xysize (680, 120)
+        xysize (750, 160)
         hbox:
             vbox:
-                spacing 10
+                xoffset 20
+                yoffset 20
                 image icon
             vbox:
-                yoffset 10
-                xoffset 10
+                xoffset 45
+                yoffset 5
                 spacing 5
-                xsize 550
+                xsize 570
                 text title:
                     size 28
                     id title
