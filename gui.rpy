@@ -34,6 +34,7 @@ define gui.idle_color = '#888888'
 ## 사용됩니다.
 define gui.idle_small_color = '#aaaaaa'
 
+
 ## 버튼(button)과 막대(bar)에 커서를 올렸을 때(hovered) 사용됩니다.
 define gui.hover_color = '#ffffff'
 
@@ -58,13 +59,13 @@ define gui.interface_text_color = '#ffffff'
 ## 글자와 글자 크기 ###################################################################
 
 ## 인-게임 글자에 사용됩니다.
-define gui.text_font = "BOOKK_myeongjoBold.ttf"
+define gui.text_font = "KoPubWorld Dotum Bold.ttf"
 
 ## 캐릭터의 이름에 사용됩니다.
-define gui.name_text_font = "BOOKK_myeongjoBold.ttf"
+define gui.name_text_font = "KoPubWorld Dotum Bold.ttf"
 
 ## 인터페이스에 사용됩니다.
-define gui.interface_text_font = "BOOKK_myeongjoBold.ttf"
+define gui.interface_text_font = "KoPubWorld Dotum Bold.ttf"
 
 ## 일반 대사의 글자 크기입니다.
 define gui.text_size = 33
@@ -244,7 +245,7 @@ define gui.file_slot_rows = 2
 ## 이러한 변수들은 다양한 사용자 인터페이스 요소들의 위치와 간격을 제어합니다.
 
 ## 화면의 왼쪽을 기준으로 하는 네비게이션 버튼의 왼쪽 위치입니다.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 120
 
 ## 스킵 표시기(skip indicator)의 수직 위치입니다.
 define gui.skip_ypos = 15
@@ -427,7 +428,8 @@ init python:
         gui.name_text_size = 54
         gui.notify_text_size = 38
         gui.interface_text_size = 45
-        gui.button_text_size = 45
+        ## 글자 크기 조정 전 gui.button_text_size = 45
+        gui.button_text_size = 40
         gui.label_text_size = 51
 
         ## 텍스트박스의 위치를 조정합니다.
@@ -442,7 +444,8 @@ init python:
         gui.choice_button_width = 1860
         gui.choice_button_text_size = 45
 
-        gui.navigation_spacing = 30
+        ## 간격 조정 전 gui.navigation_spacing = 30
+        gui.navigation_spacing = 15
         gui.pref_button_spacing = 15
 
         gui.history_height = 285
