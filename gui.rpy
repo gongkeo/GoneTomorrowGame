@@ -339,7 +339,7 @@ define config.history_length = 250
 
 ## 대사록 화면 항목의 높이를 지정하거나 None으로 하여 높이를 성능에 맡길 수 있습
 ## 니다.
-define gui.history_height = 210
+define gui.history_height = 100
 
 ## 말하는 캐릭터의 이름을 나타내는 레이블의 위치, 너비, 그리고 정렬입니다.
 define gui.history_name_xpos = 233
@@ -448,7 +448,8 @@ init python:
         gui.navigation_spacing = 15
         gui.pref_button_spacing = 15
 
-        gui.history_height = 285
+        ## 간격 조정 전 gui.history_height = 285
+        gui.history_height = 200
         gui.history_text_width = 1035
 
         gui.quick_button_text_size = 30
