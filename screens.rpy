@@ -1716,7 +1716,7 @@ style main_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-    xsize 420
+    xsize 510
 
 style game_menu_content_frame:
     variant "small"
