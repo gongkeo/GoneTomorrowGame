@@ -395,7 +395,7 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
+    
     #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
@@ -486,6 +486,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     textbutton _("돌아가기"):
         xalign 0.95
+        yalign 0.08
         style "return_button"
 
         action Return()
@@ -513,7 +514,6 @@ style return_button_text is navigation_button_text
 style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
-
     background "gui/overlay/game_menu.png"
     #background "gui/overlay/bg_black.png"
 
@@ -1716,7 +1716,7 @@ style main_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-    xsize 510
+    xsize 420
 
 style game_menu_content_frame:
     variant "small"
