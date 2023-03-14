@@ -361,4 +361,6 @@ label part9:
         $ get_achievement("hongseunggyoo", trans=achievement_transform)
     "홍승규는 날카롭게 벼린 {color=#FF8C00}단도{/color}를 안주머니에 넣었다."
 
+    jump ep2_script2
+
     return
